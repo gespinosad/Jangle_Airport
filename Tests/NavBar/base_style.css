@@ -39,7 +39,7 @@ main{
     position: fixed;
     background-color: var(--bg-primario);
     display: grid;
-    grid-gap: 5px;
+    gap: 5px;
 
     /* Especificar posición de las areas */
     grid-template-areas:
