@@ -1,6 +1,6 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
-    background: #949292;
+    background: radial-gradient(ellipse at center, #f5a967 0%, #030617 100%);
 }
 
 header{
@@ -8,6 +8,15 @@ header{
     width: 100%;
     overflow: hidden;
     
+}
+
+.logo4 img{
+    width: 130px;
+    height: 115px;
+    margin: auto;   
+    display: block; 
+    float: left;
+    padding-left: 10px;    
 }
 
 .logo3 img{
@@ -47,7 +56,7 @@ header{
 
 .menu li a{
     text-decoration:none;
-    color: #fcbf4d;
+    color: #f5a967;
     padding: 8px;
     display:block;
       
@@ -64,7 +73,7 @@ header{
 }
 
 .filtrar{
-    width: 650px;
+    width: 680px;
     background: #0e0d0d;
     padding:10px;
     margin: auto;
@@ -100,7 +109,7 @@ th{
     background: #f1efef;
     list-style: none;
     padding:20px;
-    width: 800px;
+    width: 900px;
     margin:auto;
     margin-top: 10px;
     border-radius: 10px;
@@ -122,11 +131,18 @@ td, th{
     padding-right: 80px;
     padding-top: 15px;
     padding-bottom: 20px;
-    
+    text-align: center;
+}
+
+.seleccion {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 15px;
+    padding-bottom: 20px;
+    text-align: center;
 }
 
 .reserva{
-
     width: 100%;
     border-radius: 100px;
     padding: 25px;   
@@ -134,3 +150,34 @@ td, th{
     margin-top: 30px;
     font-size: 20px;   
 }
+
+
+.footer {
+    background: #000;
+    color: #fff;
+    border: 3px solid #f5a967;
+    border-radius: 20px;
+    margin-top: 30px;
+    font-size: 20px;  
+    text-align: center;
+}
+
+h4 {
+    text-align: center;
+}
+
+.button {
+    background-color: #04AA6D; /* Green */
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+.button1 {border-radius: 50%;}
+
