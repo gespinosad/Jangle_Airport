@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home_Usuario</title>
+    <link rel="stylesheet" type="text/css" href="app\static\css\vista_home_usuario.css">
+</head>
+<body>
+    <header>
+        <div class="logo2">
+            <img src="app\static\img\Logo2.jpeg" alt="">
+        </div>
+
+        <div class="logo3">
+            <img src="app\static\img\Logo2.jpeg" alt="">
+        </div>
+
+        <div class="logo">
+            <img src="app\static\img\Logo.jpeg" alt="">
+        </div>
+    
+    </header>
+
+    <nav class="menu">
+        <ul>
+            <li><a href="opciones.html">Home</a></li>
+            <li><a href="Registro.html">Mis Vuelos</a></li>
+            <li><a href="#">Mi Perfil</a></li>
+        </ul>
+    </nav>
+    
+    <section class="filtrar">
+        <select name="Origen" id="org" class="datos">
+            <option disabled selected>Elige Origen</option>
+            <option value="Bg">Bogotá--Colombia</option>
+            <option value="Md">Medellin--Colombia</option> 
+            <option value="cl">Cali--Colombia</option> 
+            <option value="br">Barranquilla--Colombia</option> 
+            <option value="Ct">Cartagena--Colombia</option> 
+            <option value="Pr">Paris--Francia</option> 
+            <option value="Rm">Roma--Italia</option> 
+            <option value="Vn">Venecia--Italia</option> 
+            <option value="Mi">Miami--EEUU</option> 
+        </select>
+
+        <select name="Destino" id="Dst" class="datos">
+            <option disabled selected>Elige Destino</option>
+            <option value="Bg">Bogotá--Colombia</option>
+            <option value="Md">Medellin--Colombia</option> 
+            <option value="cl">Cali--Colombia</option> 
+            <option value="br">Barranquilla--Colombia</option> 
+            <option value="Ct">Cartagena--Colombia</option> 
+            <option value="Pr">Paris--Francia</option> 
+            <option value="Rm">Roma--Italia</option> 
+            <option value="Vn">Venecia--Italia</option> 
+            <option value="Mi">Miami--EEUU</option> 
+        </select>
+
+        <input class="datos" type="date" name="Fecha" placeholder="Ingresa Fecha" size="12">
+        <input class="consulta" type="submit" name="consulta" value="Consultar" >
+    </section>
+
+    <section class="tabla">
+        <h1><b>Programación Vuelos</b></h1>
+        <table>
+    
+            <tr>
+                <th>Origen</td>
+                <th>Destino</td>
+                <th>Fecha</td>
+            </tr>
+            <tr>
+                <td>Origen</td>
+                <td>Destino</td>
+                <td>Fecha</td>
+            </tr>
+            <tr>
+                <td>Origen</td>
+                <td>Destino</td>
+                <td>Fecha</td>
+            </tr>
+            <tr>
+                <td>Origen</td>
+                <td>Destino</td>
+                <td>Fecha</td>
+            </tr>
+            <tr>
+                <td>Origen</td>
+                <td>Destino</td>
+                <td>Fecha</td>
+            </tr>
+            <tr>
+                <td>Origen</td>
+                <td>Destino</td>
+                <td>Fecha</td>
+            </tr>
+            <tr>
+                <td>Origen</td>
+                <td>Destino</td>
+                <td>Fecha</td>
+            </tr>
+            <tr>
+                <td>Origen</td>
+                <td>Destino</td>
+                <td>Fecha</td>
+            </tr>
+            <tr>
+                <td>Origen</td>
+                <td>Destino</td>
+                <td>Fecha</td>
+            </tr>
+            <tr>
+                <td>Origen</td>
+                <td>Destino</td>
+                <td>Fecha</td>
+            </tr>
+        </table>
+        <input class="reserva" type="submit" name="comprar" value="Comprar" >
+    </section>
+    
+</body>
+</html>
