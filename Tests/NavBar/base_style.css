@@ -34,6 +34,9 @@ main{
 }
 
 .navbar{
+    display: grid;
+    grid-template-areas: "nav";
+    
     width: 5rem;
     height: 100vh; /*relative to the size of the view port*/
     position: fixed;
@@ -44,7 +47,6 @@ main{
     /* Especificar posición de las areas */
     grid-template-areas:
         "a"
-        "b";
 }
 
 .navbar-nav{
