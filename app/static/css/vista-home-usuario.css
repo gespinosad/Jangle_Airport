@@ -10,11 +10,11 @@ header{
     
 }
 
+
 .logo4 img{
     width: 130px;
     height: 115px;
     margin: auto;   
-    display: block; 
     float: left;
     padding-left: 10px;    
 }
@@ -23,22 +23,20 @@ header{
     width: 130px;
     height: 150px;
     margin: auto;   
-    display: block; 
     float: right; 
 }
 .logo2 img{
     width: 130px;
     height: 150px;
     margin: auto;   
-    display: block; 
     float: left;
 }
 
 .logo img{
-    width:400px;
-    height: 145px;
-    margin: auto;   
-    display: block;
+    position: absolute;
+    width:auto;
+    height:20vmin;  
+    margin-left: 35%;
 }
 
 .menu{
