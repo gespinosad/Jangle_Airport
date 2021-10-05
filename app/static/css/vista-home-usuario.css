@@ -28,7 +28,7 @@ header{
    
 }
 .big_logo{
-    margin-top: -30px;
+    margin-top: auto;
     position: absolute;
     width:auto;
     height:20vmin;  
@@ -46,9 +46,10 @@ nav{
     background-color: #000;
     border-radius: 10px;
     border: 3px solid #f5a967;
-    padding: 0;
 }
-
+.navbar-nav{
+    padding: 0%;
+}
 .navbar .nav-link{
     
     text-decoration:none;
