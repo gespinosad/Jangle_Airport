@@ -4,6 +4,7 @@
     --transition-speed: 600ms;
 }
 body{
+    margin: 0;
     display: grid;
     grid-template-areas: "tp    tp     tp"
                          "cont cont sideB"
