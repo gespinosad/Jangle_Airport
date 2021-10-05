@@ -30,11 +30,14 @@ figure{
     height: 100%;
 }
 .small_logo{
-    height: 100%;
+    height: 100%; /*!funciona solo en firefox ni idea porq*/
+    height: 15vh;/*!toco sobreescribir el hight para q funcione en varios browsers*/
+    /*todo encontrar la forma paa q q otros navegadores metan img en un grid asignado*/
    
 }
 .big_logo{
     height: 100%;
+    height: 15vh;
     justify-self: center;
 }
 
