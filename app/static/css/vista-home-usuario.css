@@ -20,19 +20,20 @@ header{
     background-color: #000;
     height: auto;
 }
-
+figure{
+    position: relative;
+    margin: auto;
+    height: 100%;
+   
+}
 .small_logo{
-    width:auto;
-    height:20vh;  
-    margin-top: -20px;
+    height: 100%;
    
 }
 .big_logo{
-    margin-top: auto;
     position: absolute;
-    width:auto;
-    height:20vmin;  
-    margin-left: 27%;
+    height: 100%;
+    left: 50%; 
 }
 
 nav{
