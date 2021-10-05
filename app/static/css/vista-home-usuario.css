@@ -22,7 +22,9 @@ header{
     height: auto;
 }
 figure{
-    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-between;
     margin: auto;
     height: 100%;
    
@@ -32,9 +34,8 @@ figure{
    
 }
 .big_logo{
-    position: absolute;
     height: 100%;
-    left: 50%; 
+    justify-self: center;
 }
 
 nav{
@@ -74,7 +75,9 @@ nav{
 
 section{
     grid-area: cont;
+    height: 100%;
 }
+
 .tabla{
     background: #f1efef;
     padding:20px;
@@ -160,7 +163,6 @@ footer {
     color: #fff;
     border: 3px solid #f5a967;
     border-radius: 20px;
-    margin-top: 30px;
     font-size: 20px;  
     text-align: center;
 }
