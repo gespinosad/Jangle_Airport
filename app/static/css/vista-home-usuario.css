@@ -27,7 +27,7 @@ figure{
     justify-content: space-between;
     margin: auto;
     height: 50px;
-   
+    height: 100%;
 }
 .small_logo{
     height: 100%;
