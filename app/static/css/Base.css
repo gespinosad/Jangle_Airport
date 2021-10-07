@@ -10,7 +10,7 @@ body {
     background: radial-gradient(ellipse at center, rgb(32, 121, 255) 20%, #030617 100%);
     height: 100vh;
     display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-columns: 1fr minmax(5vw,auto) min-content;
     grid-template-rows: 1fr 8fr 1fr;
     grid-template-areas: 
         "head head head"
@@ -28,7 +28,7 @@ body {
 }
 
 .principal {
-    padding: 30px 10px 30px 10px;
+    margin: auto;
     grid-area: cont;
     background: radial-gradient(ellipse at center, #2079ff 40%, #030617 100%);
     border: 3px solid #f5a967;
@@ -113,7 +113,6 @@ body {
 
 .datos{
     border-radius: 10px;
-    padding: 10px;
     border: 3px solid #f5a967;
 }
 
@@ -135,9 +134,7 @@ th{
 .tabla{
     background: #f1efef;
     list-style: none;
-    padding:20px;
-    width: 900px;
-    height: 900px;
+    width: fit-content;
     margin:auto;
     margin-top: 20px;
     border-radius: 10px;
@@ -147,17 +144,12 @@ th{
 
 table{
     margin-top: 10px;
-    margin-left: auto;
-    margin-right: auto;
     border-collapse: collapse;
 }
 
 td, th{
     border: 3px solid #f5a967;
-    padding-left: 80px;
-    padding-right: 80px;
-    padding-top: 15px;
-    padding-bottom: 20px;
+    padding: 2vw;
     text-align: center;
 }
 
