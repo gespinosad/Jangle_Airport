@@ -68,6 +68,7 @@ h2 {
 .publish3{
     text-align: center;
     margin: 10px;
+    align-items: center;
 }
 
 .logo1 img{
@@ -109,13 +110,14 @@ h2 {
 }
 
 .filtrar{
-    width: 740px;
-    background: #0e0d0d;
-    padding: 10px;
+    display: flex;
+    justify-content: center;
+    gap:10px; 
+    background-color: #000;
+    width: fit-content;
     margin: auto;
-    margin-top: 10px;
-    border-radius: 10px;
-    border: 3px solid #f5a967;    
+    padding: 15px;
+    border-radius: 13px;
 }
 
 .datos{
@@ -151,7 +153,6 @@ th{
     border: 3px solid #f5a967;
     overflow: scroll;
 }
-
 
 table{
     margin-top: 10px;
@@ -214,14 +215,14 @@ h4 {
 }
 
 ion-icon {
-    font-size: 150px;
+    font-size: 100px;
+    color: white;
 }
 
 .barra {
     font-family: Arial, Helvetica, sans-serif;
     width: 10%;
     height: 9%;
-
     transition: .4s all;
     z-index: 1;
 }
@@ -248,7 +249,6 @@ ion-icon {
     color: white;
     padding: 7px;
     padding-bottom: 7px;
-
     font-size: 0px;
 }
 
@@ -256,15 +256,15 @@ ion-icon {
     margin: 20px;
     background: radial-gradient(ellipse at center, #2079ff 20%, #000000 100%);
     border-radius: 10px;
-
 }
 
 .barra:hover {
-    width: 70%;
-    height: 100%;
+    width: 15vw;
+    height: 124vh;
     background-color: rgba(0, 0, 0, 0.98);
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
+    margin-right: 2vw;
 }
 
 .barra:hover h2 {
