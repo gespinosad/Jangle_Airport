@@ -1,112 +1,129 @@
-:root{
+* {
+    margin: 0%;
+    padding: 0%;
     font-size: 16px;
     --text-primario: hsl(240, 65%, 3%);
     --transition-speed: 600ms;
 }
-body{
-    margin: 0;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: radial-gradient(ellipse at center, rgb(32, 121, 255) 20%, #030617 100%);
+    height: 100vh;
     display: grid;
-    grid-template-areas: "tp    tp     tp"
-                         "cont cont sideB"
-                         "foot foot foot";
-  grid-template-rows: 20vh 0.55fr 0.1fr;
-  grid-template-columns: 20vmax auto 18vmax;
-    
-    font-family: sans-serif;
-    background: radial-gradient(ellipse at center, #f5a967 0%, #030617 100%);
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr 8fr 1fr;
+    grid-template-areas: 
+        "head head head"
+        "lf cont rgh"
+        "foot foot foot";
 }
 
-header{
-    grid-area: tp;
-    background-color: #000;
-    height: auto;
-}
-figure{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-content: space-between;
-    margin: auto;
-    height: 50px;
-    height: 100%;
-}
-.small_logo{
-    height: 100%; /*!funciona solo en firefox ni idea porq*/
-    height: 15vh;/*!toco sobreescribir el hight para q funcione en varios browsers*/
-    /*todo encontrar la forma paa q q otros navegadores metan img en un grid asignado*/
-   
-}
-.big_logo{
-    height: 100%;
-    height: 15vh;
-    justify-self: center;
-}
-
-nav{
-    grid-area: tp;
-    justify-self: right;
-    align-self: center;
-}
-
-.navbar{
-    list-style: none;
-    background-color: #000;
-    border-radius: 10px;
+.header {
+    grid-area: head;
+    background-color: black;
+    margin-top: 10px;
+    margin-bottom: 10px;
     border: 3px solid #f5a967;
-}
-.navbar-nav{
-    padding: 0%;
-}
-.navbar .nav-link{
-    
-    text-decoration:none;
-    color: #bcd625;
-    padding: 10px;
+    border-radius: 10px;
 }
 
-.navbar .nav-item{
-    display:inline-block;
-    margin: auto;
-}
-
-.nav-link:hover{
-    background-color: #f07000;
-    color: var(--text-primario);
-    text-decoration: none;
-    filter: grayscale(50%) opacity(0.7);
-    transition: var(--transition-speed);
-}
-
-section{
+.principal {
+    padding: 30px 10px 30px 10px;
     grid-area: cont;
-    height: 100%;
+    background: radial-gradient(ellipse at center, #2079ff 40%, #030617 100%);
+    border: 3px solid #f5a967;
+    border-radius: 10px;    
+}
+.menuDerecho {
+    background: radial-gradient(ellipse at center, #2079ff 20%, #030617 100%);
+    grid-area: rgh;
+    margin-left: 20px;
+    margin-right: 5px;
+    border: 3px solid #f5a967;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: unset;
+    flex-direction: column;
 }
 
-.tabla{
-    background: #f1efef;
-    padding:20px;
-    margin:17vh auto;
-    border-radius: 10px;
-    border: 3px solid #f5a967;
-    height: auto;
-    width: auto;
+.sidebar {
+    align-items: center;
+    color: white;
 }
+
+h2 {
+    text-align: center;
+}
+
+.publish1{
+    text-align: center;
+    margin: 10px;
+}
+.publish2{
+    text-align: center;
+    margin: 10px;
+}
+.publish3{
+    text-align: center;
+    margin: 10px;
+}
+
+.logo1 img{
+    width: 130px;
+    height: 150px;
+    margin: auto;   
+    display: block; 
+    float: left;
+}
+
+.logo2 img{
+    width:300px;
+    height: 150px;
+    margin: auto;   
+    display: block;
+    float: center;
+}
+
+.logo3 img{
+    width: 130px;
+    height: 150px;
+    margin: auto;   
+    display: block;
+    float: right;
+}
+
+.logo4 img{
+    width: 130px;
+    height: 115px;
+    margin: auto;   
+    display: block; 
+    float: left;
+    padding-left: 10px;    
+    padding-right: 20px;
+}
+
+.nav {
+    grid-area: lf;
+}
+
 .filtrar{
-    width: 680px;
+    width: 740px;
     background: #0e0d0d;
-    padding:10px;
+    padding: 10px;
     margin: auto;
-    margin-top: 1px;
+    margin-top: 10px;
     border-radius: 10px;
-    border: 3px solid #f5a967;
-    overflow: scroll;
+    border: 3px solid #f5a967;    
 }
 
 .datos{
     border-radius: 10px;
     padding: 10px;
     border: 3px solid #f5a967;
-    
 }
+
 .consulta{
     border-radius: 10px;
     padding: 15px;   
@@ -115,13 +132,24 @@ section{
 
 h1{
     text-align: center;
-    
 }
 
 th{
     background: #080808;
     color: #f1efef;
     
+}
+.tabla{
+    background: #f1efef;
+    list-style: none;
+    padding:20px;
+    width: 900px;
+    height: 900px;
+    margin:auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 3px solid #f5a967;
+    overflow: scroll;
 }
 
 
@@ -130,7 +158,6 @@ table{
     margin-left: auto;
     margin-right: auto;
     border-collapse: collapse;
-    
 }
 
 td, th{
@@ -152,13 +179,21 @@ td, th{
 
 .reserva{
     width: 100%;
-    border-radius: 100px;
     padding: 25px;   
     border: 3px solid #f5a967;
-    margin-top: 30px;
-    font-size: 20px;   
+    border-radius: 100px;
+    margin-left: center;
+    margin-right: center;
+    font-size: 20px;  
 }
 
+.buttonComprar {
+    list-style: none;
+    padding: 0%;
+    width: 900px;
+    margin:auto;
+    margin-top: 15px;
+}
 
 footer {
     grid-area: foot;
@@ -166,26 +201,98 @@ footer {
     color: #fff;
     border: 3px solid #f5a967;
     border-radius: 20px;
+    margin-top: 30px;
     font-size: 20px;  
     text-align: center;
 }
 
 h4 {
     text-align: center;
+    font-size: 25px;
+    margin: 6px;
+    margin-bottom: 15px;
 }
 
-.button {
-    background-color: #04AA6D; /* Green */
-    border: none;
-    color: white;
-    padding: 20px;
+ion-icon {
+    font-size: 150px;
+}
+
+.barra {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 10%;
+    height: 9%;
+
+    transition: .4s all;
+    z-index: 1;
+}
+
+.barra ul {
+    padding: 0px;
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-  }
+}
 
-.button1 {border-radius: 50%;}
+.barra li {
+    transition: .3s all;
+}
 
+.barra a {
+    text-decoration:  none;
+    list-style: none;
+    transition: .3s all;
+    font-size: 0px;
+    padding: 0px;
+}
+
+.barra h2{
+    text-align: center;
+    color: white;
+    padding: 7px;
+    padding-bottom: 7px;
+
+    font-size: 0px;
+}
+
+.barra img {
+    margin: 20px;
+    background: radial-gradient(ellipse at center, #2079ff 20%, #000000 100%);
+    border-radius: 10px;
+
+}
+
+.barra:hover {
+    width: 70%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.98);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.barra:hover h2 {
+    padding: 15px;
+    font-size: 45px;
+}
+
+.barra:hover a{
+    font-size: 30px;
+    color: white;
+    display: block;
+    padding: 20px;
+}
+
+.barra:hover ion-icon {
+    display: none;
+}
+
+.barra:hover li {
+    border-top: 1px solid black;
+    width: 100%;   
+}
+.barra:hover ul:last-of-type {
+    border-bottom: 1px solid black;
+}
+
+.barra:hover a:hover {
+    font-size: 55px;
+    padding: 30px 0px;
+    background-color: #f37e18;
+}
