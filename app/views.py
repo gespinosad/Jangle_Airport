@@ -11,12 +11,12 @@ def clean_date(dt):
     return dt.strftime("%d %b %Y")
 
 
-@app.route("/")
+# @app.route("/")
 def index():
     return render_template("public/index.html")
 
 
-@app.route('/jinja')
+# @app.route('/jinja')
 def jinja():  # -Pasing python objects to the base template html
     my_name = "Jeison"
     age = 24
@@ -54,12 +54,12 @@ def jinja():  # -Pasing python objects to the base template html
                            repeat=repeat, date=date)
 
 
-@app.route("/about")  # todo
+# @app.route("/about")  # todo
 def about():
     return render_template("public/about.html")
 
 
-@app.route('/sign_up', methods=["GET", "POST"])  # to use this get post you need to import requests
+# @app.route('/sign_up', methods=["GET", "POST"])  # to use this get post you need to import requests
 def sing_up():
     # get to get the content and post to post it into our server
     # this code wiil execute only when the route recieve a post request
