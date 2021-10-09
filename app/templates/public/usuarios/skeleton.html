@@ -5,29 +5,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Esqueleto base </title>
-    <!-- <title>{% block title %}{% endblock %}
-    </title> -->
-    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/Base.css') }}"> -->
-    <link rel="stylesheet" href="/app/static/css/skeleton.css">
-    <link rel="stylesheet" href="/app/static/css/navBar.css">
+
+    <title>{% block title %}{% endblock %}
+    </title>
+    
+    {% block link %}{% endblock %}
+<!--     
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navBar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Usuario/home.css') }}"> -->
+    
+    <!-- <link rel="stylesheet" href="/app/static/css/skeleton.css"> -->
+    <!-- <link rel="stylesheet" href="/app/static/css/navBar.css"> -->
 </head>
 
 <body>
     <header class="header">
-        <div class="logo1" id="l">
-            <img src="/app/static/img/header/Logo2.jpeg" alt="">
+        <div class="logo1" id="l"> 
+            
+            <img src="static/img/header/Logo2.jpeg" alt=""> 
         </div>
         <div class="logo3" id="l">
-            <img src="/app/static/img/header/Logo2.jpeg" alt="">
+            <img src="static/img/header/Logo2.jpeg" alt="">
         </div>
         <div class="logo2" id="l">
-            <img src="/app/static/img/header/Logo.jpeg" alt="">
+            <img src="static/img/header/Logo.jpeg" alt="">
         </div>
     </header>
 
     <div class="bg">
-        <img src="/app/static/img/ben-kim.jpg" class="mw-100" alt="">
+        <img src="static/img/ben-kim.jpg" class="mw-100" alt="">
     </div>
 
 
@@ -45,16 +51,19 @@
             </ul>
         </div>
     </nav>
+    {% block body %}{% endblock %}
     
-    <div class="principal">
+    <!-- <div class="principal">
+        {% block principal %}
+        {% endblock %}
     </div>
-
+    
     <div class="menuDerecho">
-    </div> 
+    </div>  -->
 
     <footer>
         <div class="logo4">
-            <img src="/app/static/img/header/Logo2.jpeg" alt="">
+            <img src="static/img/header/Logo2.jpeg" alt="">
         </div>
         <h4>Creadores:</h4>
         <p> * Jeison Martinez * Camilo Contreras * Gisela Espinosa * Brayan Duque * Santiago Urrego -
