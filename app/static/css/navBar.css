@@ -26,22 +26,22 @@ ion-icon {
 .barra h2{
     text-align: center;
     color: white;
-    padding: 7px;
+    padding: 10px;
     padding-bottom: 7px;
     font-size: 0px;
-}
+} 
 .barra img {
     margin: 20px;
     background: radial-gradient(ellipse at center, #2079ff 20%, #000000 100%);
     border-radius: 10px;
 }
 .barra:hover {
-    width: 15vw;
-    height: 120vh;
+    width: 13vw;
+    height: 80vh;
     background-color: rgba(0, 0, 0, 0.98);
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-    margin-right: 2vw;
+    margin-right: 1vw;   
 }
 .barra:hover h2 {
     padding: 15px;
@@ -51,7 +51,7 @@ ion-icon {
     font-size: 30px;
     color: white;
     display: block;
-    padding: 20px;
+    padding: 15px;
 }
 .barra:hover ion-icon {
     display: none;
@@ -64,7 +64,7 @@ ion-icon {
     border-bottom: 1px solid black;
 }
 .barra:hover a:hover {
-    font-size: 55px;
+    font-size: 40px;
     padding: 30px 0px;
     background-color: #f37e18;
 }
