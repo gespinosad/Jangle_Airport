@@ -9,7 +9,7 @@
     <!-- <title>{% block title %}{% endblock %}
     </title> -->
     <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/Base.css') }}"> -->
-    <link rel="stylesheet" href="/app/static/css/skeleton.css">
+    <link rel="stylesheet" href="/app/static/css/pilotopag.css">
     <link rel="stylesheet" href="/app/static/css/navBar.css">
 </head>
 
@@ -47,6 +47,50 @@
     </nav>
     
     <div class="principal">
+        <div class="titulo">Mi Perfil</div>
+        <form action="#">
+            <div class="detalle-piloto">
+                <div class="input-box">
+                    <span class="details">Nombre</span>
+                    <input type="text" placeholder="Introduzca su nombre" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Apellido</span>
+                    <input type="text" placeholder="Introduzca su apellido" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Edad</span>
+                    <input type="text" placeholder="Introduzca su edad" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Id usuario</span>
+                    <input type="text" placeholder="Introduzca su id de usuario" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Id documento</span>
+                    <input type="text" placeholder="Introduzca su id de documento" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Contraseña</span>
+                    <input type="text" placeholder="Introduzca su contraseña" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Email</span>
+                    <input type="text" placeholder="Introduzca su email" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Nueva contraseña</span>
+                    <input type="text" placeholder="Introduzca su nueva contraseña" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Confirmar contraseña</span>
+                    <input type="text" placeholder="Confirme su contraseña" required>
+                </div>
+            </div>
+            <div class="button">
+                <input type="submit" value="Guardar">
+            </div>
+        </form>
     </div>
 
     <div class="menuDerecho">
