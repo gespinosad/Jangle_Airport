@@ -1,7 +1,7 @@
 {% extends "/public/templates/public_template.html" %}
 {% block title %}sign up{% endblock %}
 {% block main %}
-<h1>Sign Up</h1>
+<!-- <h1>Sign Up</h1>
 <hr />
 <!---in flask we need to create a name atribute for forms-->
 <form action="/sign_up" method="post">
@@ -21,7 +21,23 @@
     </div>
     <button type="submit" class="btn btn-primary">Sign up</button>
 </form>
-<!-- div>(header>ul>li*2>a)+footer>p
-    a{Click me}   ---p>{Click }+a{here}+{ to continue}  learn some emmet-->
 
 {% endblock %}
+
+<!-- {% block content %}
+{% if name %}
+        <h1>Hello {{name}}</h1>
+{% else %}
+    <h1>Cuál es tu nombre?</h1>
+    <hr>
+    <form action="POST">
+        {{form.hidden}}
+
+        {{form.name.label(class="form-label")}}
+        {{form.name(class="form-control")}}
+        <br>
+        {{form.submit(class="btn btn-primary")}}
+    </form>
+{% endif %}
+
+{% endblock %} -->
