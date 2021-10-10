@@ -1,0 +1,201 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    font-size: 16px;
+    --text-primario: hsl(240, 65%, 3%);
+    --transition-speed: 600ms;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: radial-gradient(ellipse at center, #3b8aff 20%, #161b3a 100%);
+    height: 100vh;
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 2fr 7fr 5fr;
+    grid-template-rows: 1fr 1fr 1fr 8fr 1fr;
+    grid-template-areas: 
+        "head head head"
+        "bg bg bg"
+        "lf buscar buscar"
+        "lf cont rgh"
+        "foot foot foot";
+
+        /*
+            "head head head"
+            "bg bg bg"
+            "lf cont cont"
+            "foot foot foot"
+        
+            Esta es la manera para que el contenedor quede desplegado a la dereche
+            básicamente que queden dos columnas en el medio.      
+        */
+
+
+}
+.header {
+    grid-area: head;
+    background-color: black;
+    margin-top: 10px;
+    border: 3px solid #f5a967;
+    border-radius: 10px;
+}
+.bg{
+    grid-area: bg;
+}
+.bg .mw-100 {
+    width: 100%
+}
+
+.buscar{
+    grid-area: buscar;
+    /* background:#fdfcfb; */
+    height: 6vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    width: 500px;
+    margin-bottom: 10px;  
+}  
+
+input{
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    box-sizing: border-box;
+    transition: .5s;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 30px;   
+}   
+
+input[type="text"]
+{
+    background: #ffffff;
+    width: 300px;
+    height: 30px;
+    border-radius: 10px 10px 10px 10px;
+    border: 3px solid #f5a967;  
+
+}
+
+input[type="submit"]
+{
+    position: relative;
+    width: 150px;
+    height: 35px;
+    border-radius: 10px 10px 10px 10px;  
+    border: 3px solid #f5a967;
+
+}
+
+
+.principal {
+    /* background: radial-gradient(ellipse at center, #3b8aff 40%, #161b3a 100%);  */
+    grid-area: cont;
+    margin-left: 15px;
+    margin-right: 5px;
+    border: 3px solid #f5a967;
+    border-radius: 10px;    
+    display: flex;
+    flex-direction: column;
+    height: 120vh;
+}
+
+.tabla_info_vuelo{  
+    background: #ffffff;
+    display:flex;    
+    height: 120vh;
+    border-collapse: collapse;
+}
+
+.table_info_vuelos{
+ 
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 70px;
+    margin-right: 15px;
+    margin-left: 0%;
+    text-align: left;
+    border: 3px solid black;
+    border-collapse: collapse;
+
+}
+
+tr, td{
+    padding: 0;
+}
+
+
+tr:nth-child(even){
+    background-color: #f5a967;
+
+
+
+}
+.menuDerecho {
+    /* background: radial-gradient(ellipse at center, #3b8aff 35%, #161b3a 100%); */
+    grid-area: rgh;
+    margin-left: 15px;
+    margin-right: 15px;
+    border: 3px solid #f5a967;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: unset;
+    flex-direction: column;
+    height: 120vh;
+}
+.logo1 img{
+    width: 130px;
+    height: 150px;
+    margin: auto;   
+    display: block; 
+    float: left;
+}
+.logo2 img{
+    width:300px;
+    height: 150px;
+    margin: auto;   
+    display: block;
+    float: center;
+}
+.logo3 img{
+    width: 130px;
+    height: 150px;
+    margin: auto;   
+    display: block;
+    float: right;
+}
+.logo4 img{
+    width: 130px;
+    height: 115px;
+    margin: auto;   
+    display: block; 
+    float: left;
+    padding-left: 10px;    
+    padding-right: 20px;
+}
+.nav {
+    grid-area: lf;
+}
+footer {
+    grid-area: foot;
+    background: #000;
+    color: #fff;
+    border: 3px solid #f5a967;
+    border-radius: 20px;
+    margin-top: 30px;
+    font-size: 20px;  
+    text-align: center;
+}
+h4 {
+    text-align: center;
+    font-size: 25px;
+    margin: 6px;
+    margin-bottom: 15px;
+}
+ion-icon {
+    font-size: 100px;
+    color: white;
+}
