@@ -13,6 +13,13 @@ header {
     border-radius: 10px;
     height: 100%;
 }
+body{
+    background-image: url("/static/img/flying-airplane.jpg");
+    /* background-image: url("/app/static/img/flying-airplane.jpg"); */
+    background-size: 100%; /* Agregar fondo con imagen*/
+    background-size: cover;
+    background-position-x: center;
+}
 .bg{
     grid-area: bg;
 }
