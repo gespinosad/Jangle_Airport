@@ -1,10 +1,3 @@
-* {
-    margin: 0%;
-    padding: 0%;
-    font-size: 16px;
-    --text-primario: hsl(240, 65%, 3%);
-    --transition-speed: 600ms;
-}
 body {
     background-image: url("/static/img/flying-airplane.jpg");
     /* background-image: url("/app/static/img/flying-airplane.jpg"); */
@@ -27,18 +20,7 @@ body {
     border-radius: 10px;
     border: 3px solid #fff;
 }
-header {
-    grid-area: head;
-    background-color: black;
-    border-radius: 10px;
-    height: 100%;
-}
-.bg{
-    grid-area: bg;
-}
-.bg .mw-100 {
-    width: 100%;
-}
+
 .principal {
     grid-area: cont;
     margin-left: 20px;
@@ -46,56 +28,4 @@ header {
     display: flex;
     flex-direction: column;
 }
-.logo1 img{
-    width: 110px;
-    height: 95px;
-    margin: auto;   
-    display: block; 
-    float: left;
-}
-.logo2 img{
-    width:220px;
-    height: 97px;
-    margin: auto;   
-    display: block;
-    float: center;
-}
-.logo3 img{
-    width: 110px;
-    height: 95px;
-    margin: auto;   
-    display: block;
-    float: right;
-}
-.logo4 img{
-    width: 130px;
-    height: 105px;
-    margin: auto;   
-    display: block; 
-    float: left;
-    padding-left: 10px;    
-    padding-right: 20px;
-}
 
-
-h1{
-    text-align: center;
-    font-size: 200%;
-    padding: 15px;
-    color: white;
-}
-h2{
-    text-align: center;
-    color: white;
-}
-footer {
-    grid-area: foot;
-    background: rgba(0, 0, 0, 0.63);
-    color: #fff;
-    border: 3px solid #f5a967;
-    border-radius: 20px;
-    margin-top: 30px;
-    /*! margin-bottom: -20px; */
-    /*! font-size: 20px; */  
-    /*! text-align: center; */
-}
