@@ -7,6 +7,7 @@ from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
 
 
+
 # contendra todas nuestra vistas
 # add data base
 app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:password123@localhost/users"
@@ -52,7 +53,7 @@ def login():
         form.email.data = ""
     return render_template("public/sign_up.html", name=name, form=form)
 
-
+#*no se esta usando
 def sing_up():
     # get to get the content and post to post it into our server
     # this code wiil execute only when the route recieve a post request
