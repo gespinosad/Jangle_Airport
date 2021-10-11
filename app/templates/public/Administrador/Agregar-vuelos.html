@@ -5,10 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <title>{% block title %}{% endblock %}
-    </title> -->
-    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/Base.css') }}"> -->
-    <link rel="stylesheet" href="/app/static/css/Base.css">
+    <title>Administrar Vuelos</title>
+    <link rel="stylesheet" href="/app/static/css/Administrador/Agregar-vuelos.css">
     <link rel="stylesheet" href="/app/static/css/navBar.css">
 </head>
 
@@ -25,6 +23,10 @@
         </div>
     </header>
 
+    <div class="bg">
+        <img src="/app/static/img/ben-kim.jpg" class="mw-100" alt="">
+    </div>
+
     <nav class="nav">
         <div class="barra">
             <h2>Menu<div>
@@ -33,195 +35,66 @@
             </h2>
 
             <ul>
-                <li><a href="Home">Home</a></li>
-                <li><a href="Mis-vuelos">Mis Vuelos</a></li>
-                <li><a href="Mi-perfil">Mi Perfil</a></li>
+                <li><a href="Vuelos">Home</a></li>
+                <li><a href="Usuarios">Mis Vuelos</a></li>
+                <li><a href="Cerrar-sesion">Cerrar sesión</a></li>
+
             </ul>
         </div>
     </nav>
 -
     <div class="principal">
         <section class="filtrar">
-            <select name="Origen" id="org" class="datos">
-                <option disabled selected>Elige Origen</option>
-                <option value="Bg">Bogotá--Colombia</option>
-                <option value="Md">Medellin--Colombia</option>
-                <option value="cl">Cali--Colombia</option>
-                <option value="br">Barranquilla--Colombia</option>
-                <option value="Ct">Cartagena--Colombia</option>
-                <option value="Pr">Paris--Francia</option>
-                <option value="Rm">Roma--Italia</option>
-                <option value="Vn">Venecia--Italia</option>
-                <option value="Mi">Miami--EEUU</option>
-            </select>
-
-            <select name="Destino" id="Dst" class="datos">
-                <option disabled selected>Elige Destino</option>
-                <option value="Bg">Bogotá--Colombia</option>
-                <option value="Md">Medellin--Colombia</option>
-                <option value="cl">Cali--Colombia</option>
-                <option value="br">Barranquilla--Colombia</option>
-                <option value="Ct">Cartagena--Colombia</option>
-                <option value="Pr">Paris--Francia</option>
-                <option value="Rm">Roma--Italia</option>
-                <option value="Vn">Venecia--Italia</option>
-                <option value="Mi">Miami--EEUU</option>
-            </select> 
-
-            <input class="datos" type="date" name="Fecha" placeholder="Ingresa Fecha" size="12">
-            <input class="consulta" type="submit" name="consulta" value="Consultar">
+            <input class="editar" type="submit" name="editar-vuelos" value="Editar"></input>
+            <input class="agregar" type="submit" name="agregar-vuelos" value="Agregar">
+            <input class="consulta" type="submit" name="consulta-vuelos" value="Consultar">
         </section>
 
         <section class="tabla">
-            <h1><b>Programación Vuelos</b></h1>
+            <h1>AGREGAR VUELOS</h1>
+                <div class="adm-addFly">
+                    <section class="opc-agregar-vuelos">
+                        <input type="date" class="adm-fecha">
+                        <input type="text" class="adm-hsalida" placeholder="Hora salida">
+                        <input type="text" class="adm-tvuelo" placeholder="Tiempo de vuelo">
+                        <input type="text" class="adm-origen" placeholder="Origen">
+                        <input type="text" class="adm-destino" placeholder="Destino">
+                        <input type="text" class="adm-idAvion" placeholder="ID Avion">
+                        <input type="text" class="adm-codVuelo" placeholder="Cod. Vuelo">
+                        <input type="text" class="adm-status" placeholder="Status">
+                    </section>
+                    <section class="secEditar">
+                        <input type="submit" class="agregar">
+                    </section>
+                </div>
+                
             <table>
                 <tr>
+                    <th>Fecha</th>
+                    <th>Hora Salida</th>
+                    <th>Tiempo de Vuelo</th>
                     <th>Origen</th>
                     <th>Destino</th>
-                    <th>Fecha</th>
-                    <th class="seleccion">Selección</th>
+                    <th>ID Avión</th>
+                    <th>Cod. Vuelo</th>
+                    <th>Status</th>
+                    
                 </tr>
                 <tr>
-                    <td>Origen</th>
-                    <td>Destino</th>
-                    <td>Fecha</th>
-                    <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
-                </tr>
-                <tr>
-                    <td>Origen</th>
-                    <td>Destino</th>
-                    <td>Fecha</th>
-                    <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
-                </tr>
-                <tr>
-                    <td>Origen</th>
-                    <td>Destino</th>
-                    <td>Fecha</th>
-                    <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
-                </tr>
-                <tr>
-                    <td>Origen</th>
-                    <td>Destino</th>
-                    <td>Fecha</th>
-                    <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
-                </tr>
-                <tr>
+                    <td>Fecha</td>
+                    <td>Hora Salida</td>
+                    <td>Tiempo de Vuelo</td>
                     <td>Origen</td>
                     <td>Destino</td>
-                    <td>Fecha</td>
-                    <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
-                </tr>
-                <tr>
-                    <td>Origen</td>
-                    <td>Destino</td>
-                    <td>Fecha</td>
-                    <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
-                </tr>
-                <tr>
-                    <td>Origen</td>
-                    <td>Destino</td>
-                    <td>Fecha</td>
-                    <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
-                </tr>
-                <tr>
-                    <td>Origen</td>
-                    <td>Destino</td>
-                    <td>Fecha</td>
-                    <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
-                </tr>
-                <tr>
-                    <td>Origen</td>
-                    <td>Destino</td>
-                    <td>Fecha</td>
-                    <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
-                </tr>
-                <tr>
-                    <td>Origen</th>
-                    <td>Destino</th>
-                    <td>Fecha</th>
-                    <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
-                </tr>
-                <tr>
-                    <td>Origen</th>
-                    <td>Destino</th>
-                    <td>Fecha</th>
-                    <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
-                </tr>
-                <tr>
-                    <td>Origen</th>
-                    <td>Destino</th>
-                    <td>Fecha</th>
-                    <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
-                </tr>
-                <tr>
-                    <td>Origen</th>
-                    <td>Destino</th>
-                    <td>Fecha</th>
-                    <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
-                </tr>
-                <tr>
-                    <td>Origen</td>
-                    <td>Destino</td>
-                    <td>Fecha</td>
-                    <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
-                </tr>
-                <tr>
-                    <td>Origen</td>
-                    <td>Destino</td>
-                    <td>Fecha</td>
-                    <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
-                </tr>
-                <tr>
-                    <td>Origen</td>
-                    <td>Destino</td>
-                    <td>Fecha</td>
-                    <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
-                </tr>
-                <tr>
-                    <td>Origen</td>
-                    <td>Destino</td>
-                    <td>Fecha</td>
-                    <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
-                </tr>
-                <tr>
-                    <td>Origen</td>
-                    <td>Destino</td>
-                    <td>Fecha</td>
-                    <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
+                    <td>ID Avión</td>
+                    <td>Cod. Vuelo</td>
+                    <td>Status</td>
                 </tr>
             </table>
 
         </section>
-
-        <section class="buttonComprar">
-            <!-- Contenedor para centrar el botón, !!!!NO TOCAR!!!! Si tiene una mejor idea, hágalo :v -->
-            <input class="reserva" type="submit" name="comprar" value="Comprar" />
-        </section>
     </div>
 
-    <div class="menuDerecho">
-        <h2>Mejores Destinos</h2>
-        <aside class="sidebar">
-            <!--<img src="/app/static/img/sidebar/Miami.gif" alt="404 NOT FOUND">  500 X 364-->
-            <div class="imgDestinos">
-                 <img src="/app/static/img/header/Logo2.jpeg" alt="">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, expedita!</p>
-            </div>
-
-            <div class="imgDestinos">
-                <!--<img class= "" src="/app/static/img/sidebar/medellin.gif" alt="404 NOT FOUND">-->
-                <img src="/app/static/img/header/Logo2.jpeg" alt="">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, expedita!</p>
-            </div>
-
-            <div class="imgDestinos">
-                <!--<img src="/app/static/img/sidebar/cancun.gif" alt="404 NOT FOUND">-->
-                <img src="/app/static/img/header/Logo2.jpeg" alt="">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, expedita!</p>
-            </div>
-        </aside>
-    </div>
-<!--------- Esto es de mi perfil usuario -->
     <footer>
         <div class="logo4">
             <img src="/app/static/img/header/Logo2.jpeg" alt="">
@@ -231,7 +104,7 @@
             <strong>Contacto:</strong> 601 606 60 60 <strong>Correo:</strong> support@jangle.com
         </p>
     </footer>
-<!-- -------------------------------------------------------------------- -->
+
 </body>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

@@ -1,12 +1,13 @@
-{% extends "public/usuarios/skeleton.html" %}
+{% extends "public/plantilla/plantilla.html" %}
 {% block title %}Home User{% endblock %}
 {% block link %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/skeleton.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/plantilla/plantilla.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/navBar.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/Usuario/home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Usuario/sidebar_home_usuario.css') }}">
 {% endblock %}
 
-{% block body %} 
+{% block principal %} 
     <div class="principal"> 
         <section class="filtrar">
             <select name="Origen" id="org" class="datos">
@@ -39,133 +40,52 @@
             <input class="consulta" type="submit" name="consulta" value="Consultar">
         </section>
 
-        <section class="tabla">
-            <h1><b>Programación Vuelos</b></h1>
-            <table>
-                <tr>
-                    <th>Origen</th>
-                    <th>Destino</th>
-                    <th>Fecha</th>
-                    <th class="seleccion">Selección</th>
-                </tr>
-                <tr>
-                    <td>Origen</th>
-                    <td>Destino</th>
-                    <td>Fecha</th>
-                    <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
-                </tr>
-                <tr>
-                    <td>Origen</th>
-                    <td>Destino</th>
-                    <td>Fecha</th>
-                    <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
-                </tr>
-                <tr>
-                    <td>Origen</th>
-                    <td>Destino</th>
-                    <td>Fecha</th>
-                    <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
-                </tr>
-                <tr>
-                    <td>Origen</th>
-                    <td>Destino</th>
-                    <td>Fecha</th>
-                    <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
-                </tr>
-                <tr>
-                    <td>Origen</td>
-                    <td>Destino</td>
-                    <td>Fecha</td>
-                    <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
-                </tr>
-                <tr>
-                    <td>Origen</td>
-                    <td>Destino</td>
-                    <td>Fecha</td>
-                    <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
-                </tr>
-                <tr>
-                    <td>Origen</td>
-                    <td>Destino</td>
-                    <td>Fecha</td>
-                    <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
-                </tr>
-                <tr>
-                    <td>Origen</td>
-                    <td>Destino</td>
-                    <td>Fecha</td>
-                    <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
-                </tr>
-                <tr>
-                    <td>Origen</td>
-                    <td>Destino</td>
-                    <td>Fecha</td>
-                    <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
-                </tr>
-                <tr>
-                    <td>Origen</th>
-                    <td>Destino</th>
-                    <td>Fecha</th>
-                    <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
-                </tr>
-                <tr>
-                    <td>Origen</th>
-                    <td>Destino</th>
-                    <td>Fecha</th>
-                    <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
-                </tr>
-                <tr>
-                    <td>Origen</th>
-                    <td>Destino</th>
-                    <td>Fecha</th>
-                    <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
-                </tr>
-                <tr>
-                    <td>Origen</th>
-                    <td>Destino</th>
-                    <td>Fecha</th>
-                    <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
-                </tr>
-                <tr>
-                    <td>Origen</td>
-                    <td>Destino</td>
-                    <td>Fecha</td>
-                    <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
-                </tr>
-                <tr>
-                    <td>Origen</td>
-                    <td>Destino</td>
-                    <td>Fecha</td>
-                    <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
-                </tr>
-                <tr>
-                    <td>Origen</td>
-                    <td>Destino</td>
-                    <td>Fecha</td>
-                    <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
-                </tr>
-                <tr>
-                    <td>Origen</td>
-                    <td>Destino</td>
-                    <td>Fecha</td>
-                    <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
-                </tr>
-                <tr>
-                    <td>Origen</td>
-                    <td>Destino</td>
-                    <td>Fecha</td>
-                    <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
-                </tr>
-            </table>
-
-        </section>
+    {% endblock %}
+    {% block plantilla %}
+        <h1><b>Programación Vuelos</b></h1>
+        <table>
+            <tr>
+                <th>Origen</th>
+                <th>Destino</th>
+                <th>Fecha</th>
+                <th class="seleccion">Selección</th>
+            </tr>
+            <tr>
+                <td>Origen</th>
+                <td>Destino</th>
+                <td>Fecha</th>
+                <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
+            </tr>
+            <tr>
+                <td>Origen</th>
+                <td>Destino</th>
+                <td>Fecha</th>
+                <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
+            </tr>
+            <tr>
+                <td>Origen</th>
+                <td>Destino</th>
+                <td>Fecha</th>
+                <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
+            </tr>
+            <tr>
+                <td>Origen</th>
+                <td>Destino</th>
+                <td>Fecha</th>
+                <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
+            </tr>
+        </table>
+        
 
         <section class="buttonComprar">
             <!-- Contenedor para centrar el botón, !!!!NO TOCAR!!!! Si tiene una mejor idea, hágalo :v -->
             <input class="reserva" type="submit" name="comprar" value="Comprar" />
         </section>
+        
     </div>
-
+    {% endblock %}
+    
+    {% block menuDerecho %}
     <div class="menuDerecho">
         <h2>Mejores Destinos</h2>
         <aside class="sidebar">
@@ -181,13 +101,14 @@
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, expedita!</p>
             </div>
 
-            <div class="imgDestinos">
-                <!--<img src="/app/static/img/sidebar/cancun.gif" alt="404 NOT FOUND">-->
+            <!--<div class="imgDestinos">
+                <img src="/app/static/img/sidebar/cancun.gif" alt="404 NOT FOUND">
                 <img src="static/img/header/Logo2.jpeg" alt="">
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, expedita!</p>
-            </div>
+            </div>-->
         </aside>
     </div>
-{% endblock %}
+    {% endblock %}
+
 
 
