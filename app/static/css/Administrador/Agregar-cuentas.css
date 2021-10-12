@@ -5,7 +5,7 @@
     --text-primario: hsl(240, 65%, 3%);
     --transition-speed: 600ms;
 }
-body {
+body { 
     height: 700px;
     background-image: url("/app/static/img/flying-airplane.jpg");
     background-size: 100%; /* Agregar fondo con imagen*/
