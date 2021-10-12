@@ -48,11 +48,17 @@ main{
 }
 
 .navbar-nav{
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(1,3fr);
+    grid-auto-rows: minmax(25vh, auto);
     grid-template-areas:
-            "izquierda de"
-            "izquierda de";
+            "de"
+            "de"
+            "de";
+    
 }
-.nav-item:last-child {
+.nav-item:last-child { /*hace q el ultimo item aparezca hasta el final*/
   margin-top: auto;
 }
 

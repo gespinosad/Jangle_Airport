@@ -1,0 +1,183 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: radial-gradient(ellipse at center, #f5a967 0%, #030617 100%);
+}
+
+header{
+    background: #090909;
+    width: 100%;
+    overflow: hidden;
+    
+}
+
+.logo4 img{
+    width: 130px;
+    height: 115px;
+    margin: auto;   
+    display: block; 
+    float: left;
+    padding-left: 10px;    
+}
+
+.logo3 img{
+    width: 130px;
+    height: 150px;
+    margin: auto;   
+    display: block; 
+    float: right; 
+}
+.logo2 img{
+    width: 130px;
+    height: 150px;
+    margin: auto;   
+    display: block; 
+    float: left;
+}
+
+.logo img{
+    width:400px;
+    height: 145px;
+    margin: auto;   
+    display: block;
+}
+
+.menu{
+    list-style: none;
+    padding:0%;
+    background: #090909;
+    width: 310px;
+    margin:left;
+    margin-top: 1px;
+    border-radius: 10px;
+    border: 3px solid #f5a967;
+    
+    
+}
+
+.menu li a{
+    text-decoration:none;
+    color: #f5a967;
+    padding: 8px;
+    display:block;
+      
+}
+
+.menu li{
+    display:inline-block;
+    text-align: center;
+}
+
+.menu li a:hover{
+    background: #f8f7f6;
+
+}
+
+.filtrar{
+    width: 680px;
+    background: #0e0d0d;
+    padding:10px;
+    margin: auto;
+    margin-top: 1px;
+    border-radius: 10px;
+    border: 3px solid #f5a967;
+    
+}
+
+.datos{
+    border-radius: 10px;
+    padding: 10px;
+    border: 3px solid #f5a967;
+    
+}
+.consulta{
+    border-radius: 10px;
+    padding: 15px;   
+    border: 3px solid #f5a967; 
+}
+
+h1{
+    text-align: center;
+    
+}
+
+th{
+    background: #080808;
+    color: #f1efef;
+    
+}
+.tabla{
+    background: #f1efef;
+    list-style: none;
+    padding:20px;
+    width: 900px;
+    margin:auto;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 3px solid #f5a967;
+
+}
+
+table{
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    
+}
+
+td, th{
+    border: 3px solid #f5a967;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 15px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.seleccion {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 15px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.reserva{
+    width: 100%;
+    border-radius: 100px;
+    padding: 25px;   
+    border: 3px solid #f5a967;
+    margin-top: 30px;
+    font-size: 20px;   
+}
+
+
+.footer {
+    background: #000;
+    color: #fff;
+    border: 3px solid #f5a967;
+    border-radius: 20px;
+    margin-top: 30px;
+    font-size: 20px;  
+    text-align: center;
+}
+
+h4 {
+    text-align: center;
+}
+
+.button {
+    background-color: #04AA6D; /* Green */
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+.button1 {border-radius: 50%;}
+
