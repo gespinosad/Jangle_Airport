@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Esqueleto base </title>
+    <title> Mi perfil </title>
     <!-- <title>{% block title %}{% endblock %}
     </title> -->
     <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/Base.css') }}"> -->
@@ -39,9 +39,10 @@
             </h2>
 
             <ul>
-                <li><a href="Home">Home</a></li>
-                <li><a href="Mis-vuelos">Mis Vuelos</a></li>
-                <li><a href="Mi-perfil">Mi Perfil</a></li>
+                
+                <li><a href="mis-vuelos.html">Mis Vuelos</a></li>
+                <li><a href="mi-perfil.html">Mi Perfil</a></li>
+                <li><a href="Home">Cerrar sesión</a></li>
             </ul>
         </div>
     </nav>
@@ -60,15 +61,15 @@
                 </div>
                 <div class="input-box">
                     <span class="details">Edad</span>
-                    <input type="text" placeholder="Introduzca su edad" required>
+                    <input type="number" min="18" onkeypress="return false;" placeholder="Introduzca su edad" required>
                 </div>
                 <div class="input-box">
                     <span class="details">Id usuario</span>
-                    <input type="text" placeholder="Introduzca su id de usuario" required>
+                    <input type="number" min="1" max="3" placeholder="Introduzca su id de usuario" required>
                 </div>
                 <div class="input-box">
                     <span class="details">Id documento</span>
-                    <input type="text" placeholder="Introduzca su id de documento" required>
+                    <input type="number" placeholder="Introduzca su id de documento" required>
                 </div>
                 <div class="input-box">
                     <span class="details">Contraseña</span>
@@ -76,15 +77,18 @@
                 </div>
                 <div class="input-box">
                     <span class="details">Email</span>
-                    <input type="text" placeholder="Introduzca su email" required>
+                    <input type="email" placeholder="Introduzca su email" required>
                 </div>
                 <div class="input-box">
                     <span class="details">Nueva contraseña</span>
-                    <input type="text" placeholder="Introduzca su nueva contraseña" required>
+                    <input type="password" placeholder="Introduzca su nueva contraseña" required>
                 </div>
                 <div class="input-box">
                     <span class="details">Confirmar contraseña</span>
-                    <input type="text" placeholder="Confirme su contraseña" required>
+                    <input type="password" placeholder="Confirme su contraseña" required>
+                </div>
+                <div class="button1">
+                    <input type="submit" value="Editar">
                 </div>
             </div>
             <div class="button">

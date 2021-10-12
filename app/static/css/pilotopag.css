@@ -7,7 +7,8 @@
 }
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: radial-gradient(ellipse at center, #3b8aff 20%, #161b3a 100%);
+    background-image: url("/app/static/img/flying-airplane.jpg");
+    background-size: 150%;
     height: 100vh;
     display: grid;
     min-height: 100vh;
@@ -48,7 +49,7 @@ body {
 
 
 .principal {
-    background: radial-gradient(ellipse at center, #3b8aff 40%, #161b3a 100%); 
+    background: rgba(0, 0, 0, 0.589); 
     grid-area: cont;
     padding: 30px 10px 30px 10px;
     margin-left: 20px;
@@ -85,7 +86,7 @@ body {
 }
 
 .tabla{
-    background: #f1efef;
+    background: #00000031;
     list-style: none;
     width: fit-content;
     margin:auto;
@@ -100,6 +101,15 @@ table{
     border-collapse: collapse;
 }
 
+th{
+    background: #000000c0;
+    color: #fff;
+}
+
+td{
+    color: #fff;
+}
+
 td, th{
     border: 3px solid #f5a967;
     padding: 2vw;
@@ -107,9 +117,11 @@ td, th{
 }
 
 .principal .titulo{
-    font-size: 25px;
+    font-size: 200%;
     font-weight: 500;
     text-align: center;
+    color: #fff;
+    
 }
 
 .principal form .detalle-piloto{
@@ -128,6 +140,8 @@ form .detalle-piloto .input-box{
     display: block;
     font-weight: 500;
     margin-bottom: 5px;
+    color: #fff;
+    font-size: 22px;
 }
 
 .detalle-piloto .input-box input{
@@ -145,6 +159,26 @@ form .detalle-piloto .input-box{
 .detalle-piloto .input-box input:focus,
 .detalle-piloto .input-box input:valid{
     border-color: #f5a967;
+}
+
+.detalle-piloto .button1{
+    height: 45px;
+    margin: 30px 0;
+    width: 48%;
+    
+}
+
+.detalle-piloto .button1 input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    background: #f5a967;
 }
 
 form .button{
@@ -182,19 +216,7 @@ form .button input{
     }
 }
 
-/*.menuDerecho {
-    background: radial-gradient(ellipse at center, #3b8aff 35%, #161b3a 100%);
-    grid-area: rgh;
-    margin-left: 20px;
-    margin-right: 5px;
-    border: 3px solid #f5a967;
-    border-radius: 10px;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: unset;
-    flex-direction: column;
-}*/
+
 .logo1 img{
     width: 130px;
     height: 150px;
@@ -230,7 +252,7 @@ form .button input{
 }
 footer {
     grid-area: foot;
-    background: #000;
+    background: #000000a1;
     color: #fff;
     border: 3px solid #f5a967;
     border-radius: 20px;
