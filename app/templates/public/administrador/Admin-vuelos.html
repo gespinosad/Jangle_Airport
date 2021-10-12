@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administrar Cuentas</title>
-    <link rel="stylesheet" href="/app/static/css/Administrador/Admin-cuentas.css">
+    <title>Administrar Vuelos</title>
+    <link rel="stylesheet" href="/app/static/css/Administrador/Admin-vuelos.css">
     <link rel="stylesheet" href="/app/static/css/navBar.css">
 </head>
 
@@ -29,15 +29,15 @@
 
     <nav class="nav">
         <div class="barra">
-
+            
             <h2>Menu<div>
                     <ion-icon class="image" name="menu-outline"></ion-icon>
                 </div>
             </h2>
 
             <ul>
-                <li><a href="Admin-vuelos.html">Vuelos</a></li>
-                <li><a href="Admin-cuentas.html">Cuentas</a></li>
+                <li><a href="/app/templates/public/administrador/Admin-vuelos.html">Vuelos</a></li>
+                <li><a href="/app/templates/public/administrador/Admin-cuentas.html">Cuentas</a></li>
                 <li><a href="Cerrar-sesion">Cerrar sesión</a></li>
             </ul>
 
@@ -46,77 +46,83 @@
 
     <div class="principal">
         <section class="filtrar">
-            <input class="adm-edit-user" type="submit" name="editar-vuelos" value="Editar"></input>
-
-            <form action="Agregar-cuentas.html">
-                <input class="adm-add-user" type="submit" name="agregar-vuelos" value="Agregar"></input>
+            <input class="editar" type="submit" name="editar-vuelos" value="Editar"></input>
+            <form action="Agregar-vuelos.html">
+                <input class="agregar" type="submit" name="agregar-vuelos" value="Agregar">
             </form>
-            
-            <input class="adm-delete-user" type="submit" name="eliminar-usuario" value="Eliminar"></input>
+            <input class="consultar" type="submit" name="consultar-vuelos" value="Consultar">
         </section>
 
         <section class="tabla">
 
-            <h1>CUENTAS</h1>
+            <h1>VUELOS</h1>
             
             <table>
                 <tr>
-                    <th class="seleccion">Selección</th>
-                    <th>Rol</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>ID Documento</th>
-                    <th>Edad</th>
-                    <th>Email</th>
+                    <th>Selección</th>
+                    <th>Fecha</th>
+                    <th>Hora Salida</th>
+                    <th>Tiempo de Vuelo</th>
+                    <th>Origen</th>
+                    <th>Destino</th>
+                    <th>ID Avión</th>
+                    <th>Cod. Vuelo</th>
+                    <th>Status</th>
                 </tr>
                 <tr>
                     <td><label class="switch"><input type="checkbox" name="switch">
                         <span class="slider"></span></label>
                     </td>
-                    <td>1 (Usuario)</td>
-                    <td>Nombre</td>
-                    <td>Apellido</td>
-                    <td>ID Documento</td>
-                    <td>Edad</td>
-                    <td>Email</td>
+                    <td>Fecha</td>
+                    <td>Hora Salida</td>
+                    <td>Tiempo de Vuelo</td>
+                    <td>Origen</td>
+                    <td>Destino</td>
+                    <td>ID Avión</td>
+                    <td>Cod. Vuelo</td>
+                    <td>Status</td>
                 </tr>
                 <tr>
                     <td><label class="switch"><input type="checkbox" name="switch">
                         <span class="slider"></span></label>
                     </td>
-                    <td>1 (Usuario)</td>
-                    <td>Nombre</td>
-                    <td>Apellido</td>
-                    <td>ID Documento</td>
-                    <td>Edad</td>
-                    <td>Email</td>
+                    <td>Fecha</td>
+                    <td>Hora Salida</td>
+                    <td>Tiempo de Vuelo</td>
+                    <td>Origen</td>
+                    <td>Destino</td>
+                    <td>ID Avión</td>
+                    <td>Cod. Vuelo</td>
+                    <td>Status</td>
                 </tr>
                 <tr>
                     <td><label class="switch"><input type="checkbox" name="switch">
                         <span class="slider"></span></label>
                     </td>
-                    <td>2 (Piloto)</td>
-                    <td>Nombre</td>
-                    <td>Apellido</td>
-                    <td>ID Documento</td>
-                    <td>Edad</td>
-                    <td>Email</td>
+                    <td>Fecha</td>
+                    <td>Hora Salida</td>
+                    <td>Tiempo de Vuelo</td>
+                    <td>Origen</td>
+                    <td>Destino</td>
+                    <td>ID Avión</td>
+                    <td>Cod. Vuelo</td>
+                    <td>Status</td>
                 </tr>
                 <tr>
                     <td><label class="switch"><input type="checkbox" name="switch">
                         <span class="slider"></span></label>
                     </td>
-                    <td>3 (Administrador)</td>
-                    <td>Nombre</td>
-                    <td>Apellido</td>
-                    <td>ID Documento</td>
-                    <td>Edad</td>
-                    <td>Email</td>
+                    <td>Fecha</td>
+                    <td>Hora Salida</td>
+                    <td>Tiempo de Vuelo</td>
+                    <td>Origen</td>
+                    <td>Destino</td>
+                    <td>ID Avión</td>
+                    <td>Cod. Vuelo</td>
+                    <td>Status</td>
                 </tr>
             </table>
-            <div class="divbutton">
-                <input type="button" class="adm-save-chUsers" value="Guardar Cambios">
-            </div>
+
         </section>
     </div>
 
