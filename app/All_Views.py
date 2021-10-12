@@ -1,6 +1,7 @@
 from app import app
 from datetime import datetime
 from flask import render_template, request, redirect, flash
+
 # from flask_sqlalchemy import SQLAlchemy
 # from flask_wtf import FlaskForm
 # from wtforms import StringField, SubmitField
@@ -9,7 +10,9 @@ from flask import render_template, request, redirect, flash
 
 # contendra todas nuestra vistas
 # add data base
-app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:password123@localhost/users"
+app.config[
+    "SQLALCHEMY_DATABASE_URI"
+] = "mysql+pymysql://root:password123@localhost/users"
 app.config["SECRET_KEY"] = "contraseña123"
 # initialize the database
 # db = SQLAlchemy(app)
@@ -67,6 +70,27 @@ app.config["SECRET_KEY"] = "contraseña123"
 #     return render_template("public/sign_up.html")
 
 
-@app.route("/")
-def index():
+@app.route("/login")
+def login():
+    return render_template("public/login.html")
+
+
+@app.route("/registro")  # esto es el link que ponemos en el menú para cambiar de pagina
+def registro():
+    return render_template("public/registro.html")
+
+
+@app.route("/mi-perfil-user")
+def my_profile_user():
+    return render_template("aqui va el link al html con flask para un ej ver home-user")
+
+
+@app.route("/mis-vuelos-user")
+def mis_vuelos_user():
+    return render_template("html con flask")
+
+
+@app.route("/home-user")
+def homeUser():
     return render_template("public/home-user.html")
+
