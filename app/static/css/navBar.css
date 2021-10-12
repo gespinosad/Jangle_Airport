@@ -37,7 +37,7 @@ ion-icon {
 }
 .barra:hover {
     width: 13vw;
-    height: 80vh;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.98);
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
