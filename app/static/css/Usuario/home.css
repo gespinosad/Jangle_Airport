@@ -7,10 +7,12 @@
     /*! width: 45vw; */
     /*! height: 70vh; */
  
-    background-color: rgba(0, 0, 0, 0.301) ;
+    background-color: rgba(0, 0, 0, 0.58);
     border-radius: 10px;
     border: 3px solid #fff;
     align-content: center;
+    /*! text-shadow: cornflowerblue; */
+    color: white;
 }
 h4 {
     text-align: center;
