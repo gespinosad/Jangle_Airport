@@ -19,7 +19,7 @@ app.config["SECRET_KEY"] = "contraseña123"
 
 # # create the model
 
-
+# region bd codigo
 # class Users(db.Model):
 #     id = db.Column(db.Integer, primary_key=True)
 #     name = db.Column(db.String(13), nullable=False)
@@ -68,6 +68,7 @@ app.config["SECRET_KEY"] = "contraseña123"
 #         print(username, email, password)
 #         return redirect(request.url)
 #     return render_template("public/sign_up.html")
+# endregion
 
 
 @app.route("/login")
