@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administrar Vuelos</title>
-    <link rel="stylesheet" href="/app/static/css/Administrador/Agregar-vuelos.css">
+    <title>Agregar Vuelos</title>
+    <link rel="stylesheet" href="/app/static/css/administrador/Agregar-vuelos.css">
     <link rel="stylesheet" href="/app/static/css/navBar.css">
 </head>
 
@@ -35,28 +35,20 @@
             </h2>
 
             <ul>
-                <li><a href="Vuelos">Home</a></li>
-                <li><a href="Usuarios">Mis Vuelos</a></li>
-                <li><a href="Cerrar-sesion">Cerrar sesión</a></li>
-
+                <li><a href="/app/templates/public/administrador/Admin-vuelos.html">Vuelos</a></li>
+                <li><a href="/app/templates/public/administrador/Admin-cuentas.html">Cuentas</a></li>
+                <li><a href="#">Cerrar sesión</a></li>
             </ul>
+            
         </div>
     </nav>
--
-    <div class="principal">
-        <section class="filtrar">
-            <input class="editar" type="submit" name="editar-vuelos" value="Editar"></input>
-            <input class="agregar" type="submit" name="agregar-vuelos" value="Agregar">
-            <input class="consulta" type="submit" name="consulta-vuelos" value="Consultar">
-        </section>
 
+    <div class="principal">
         <section class="tabla">
             <h1>AGREGAR VUELOS</h1>
                 <div class="adm-addFly">
                     <section class="opc-agregar-vuelos">
-                        <input type="date" class="adm-fecha">
-                        <input type="text" class="adm-hsalida" placeholder="Hora salida">
-                        <input type="text" class="adm-tvuelo" placeholder="Tiempo de vuelo">
+                        <input type="datetime-local" class="adm-fechayhora">
                         <input type="text" class="adm-origen" placeholder="Origen">
                         <input type="text" class="adm-destino" placeholder="Destino">
                         <input type="text" class="adm-idAvion" placeholder="ID Avion">
@@ -64,7 +56,7 @@
                         <input type="text" class="adm-status" placeholder="Status">
                     </section>
                     <section class="secEditar">
-                        <input type="submit" class="agregar">
+                        <input type="submit" class="adm-agregar-datos">
                     </section>
                 </div>
                 
@@ -90,6 +82,36 @@
                     <td>Cod. Vuelo</td>
                     <td>Status</td>
                 </tr>
+                <tr>
+                    <td>Fecha</td>
+                    <td>Hora Salida</td>
+                    <td>Tiempo de Vuelo</td>
+                    <td>Origen</td>
+                    <td>Destino</td>
+                    <td>ID Avión</td>
+                    <td>Cod. Vuelo</td>
+                    <td>Status</td>
+                </tr>
+                <tr>
+                    <td>Fecha</td>
+                    <td>Hora Salida</td>
+                    <td>Tiempo de Vuelo</td>
+                    <td>Origen</td>
+                    <td>Destino</td>
+                    <td>ID Avión</td>
+                    <td>Cod. Vuelo</td>
+                    <td>Status</td>
+                </tr>
+                <tr>
+                    <td>Fecha</td>
+                    <td>Hora Salida</td>
+                    <td>Tiempo de Vuelo</td>
+                    <td>Origen</td>
+                    <td>Destino</td>
+                    <td>ID Avión</td>
+                    <td>Cod. Vuelo</td>
+                    <td>Status</td>
+                </tr>
             </table>
 
         </section>
@@ -100,9 +122,9 @@
             <img src="/app/static/img/header/Logo2.jpeg" alt="">
         </div>
         <h4>Creadores:</h4>
-        <p> * Jeison Martinez * Camilo Contreras * Gisela Espinosa * Brayan Duque * Santiago Urrego -
+        <h2> * Jeison Martinez * Camilo Contreras * Gisela Espinosa * Brayan Duque * Santiago Urrego -
             <strong>Contacto:</strong> 601 606 60 60 <strong>Correo:</strong> support@jangle.com
-        </p>
+        </h2>
     </footer>
 
 </body>
