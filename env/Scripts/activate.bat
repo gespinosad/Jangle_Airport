@@ -1,6 +1,6 @@
 @echo off
 
-set "VIRTUAL_ENV=C:\Users\CAMILO\Documents\GitHub\Jangle_Airport\env"
+set "VIRTUAL_ENV=D:\Escritorio\SALVADO\WEB\Jangle_Airport\Jangle_Airport\env"
 
 if defined _OLD_VIRTUAL_PROMPT (
     set "PROMPT=%_OLD_VIRTUAL_PROMPT%"

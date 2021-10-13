@@ -44,7 +44,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV='C:\Users\CAMILO\Documents\GitHub\Jangle_Airport\env'
+VIRTUAL_ENV='D:\Escritorio\SALVADO\WEB\Jangle_Airport\Jangle_Airport\env'
 if ([ "$OSTYPE" = "cygwin" ] || [ "$OSTYPE" = "msys" ]) && $(command -v cygpath &> /dev/null) ; then
     VIRTUAL_ENV=$(cygpath -u "$VIRTUAL_ENV")
 fi
