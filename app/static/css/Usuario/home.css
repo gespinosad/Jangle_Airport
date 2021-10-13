@@ -43,7 +43,7 @@ p {
     display: flex;
     justify-content: center;
     gap:20px; 
-    background-color: #000;
+    /* background-color: #000; */
     width: fit-content;
     align-self: center;
     padding: 15px;

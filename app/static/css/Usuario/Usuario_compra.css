@@ -1,85 +1,37 @@
-* {
-    margin: 0%;
-    padding: 0%;
-    font-size: 16px;
-    --text-primario: hsl(240, 65%, 3%);
-    --transition-speed: 600ms;
-}
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: radial-gradient(ellipse at center, #3b8aff 20%, #161b3a 100%);
-    height: 100vh;
+
     display: grid;
-    min-height: 100vh;
-    background-image: url("/app/static/img/flying-airplane.jpg");
-    background-size: 155%;
-    grid-template-columns: 2fr 5fr 7fr;
-    grid-template-rows: 1fr 1fr 8fr 1fr;
+    grid-template-columns: 1fr 3fr 1fr;;
+    grid-template-rows: auto auto 1fr auto;
     grid-template-areas: 
         "head head head"
         "bg bg bg"
         "lf cont rgh"
         "foot foot foot";
-
-        /*
-            "head head head"
-            "bg bg bg"
-            "lf cont cont"
-            "foot foot foot"
-        
-            Esta es la manera para que el contenedor quede desplegado a la dereche
-            básicamente que queden dos columnas en el medio.      
-        */
-
-
 }  
-.header {
-    grid-area: head;
-    background-color: black;
-    margin-top: 0;
-    border: 3px solid #f5a967;
-    border-radius: 10px;
-}
-.bg{
-    grid-area: bg;
-}
-.bg .mw-100 {
-    width: 100%
-}
 
-.principal {
-    /* background: radial-gradient(ellipse at center, #3b8aff 40%, #161b3a 100%);  */
+.principal{
     grid-area: cont;
     background: rgba(0, 0, 0, 0.493);
-    margin: 25px 5px 15px 15px;
+    margin-top: 25px;
     border: 3px solid #f5a967;
     border-radius: 10px;    
     display: flex;
     flex-direction: column;
-    height: 110vh;
-    width: 70vh;
-}
-
-
-h1{
-    width: 100%;
-    text-align: center;
-    margin-top: 3vh;
-    font-size: 6vh;
-    color: #ffffff;     
+    /* width: 65vh; */
+    width: 90%;
 }
 
 .menuDerecho {
     grid-area: rgh;
-    /* background: radial-gradient(ellipse at center, #3b8aff 35%, #161b3a 100%); */
     background: rgba(0, 0, 0, 0.493);
-    margin: 25px 5px 15px 5px;
+    margin-top: 25px;
     border: 3px solid #f5a967;
     border-radius: 10px;    
     display: flex;
     flex-direction: column;
-    height: 110vh;
-    width: 98vh;
+    width: 85vh;
 }
 
 input[type="submit"]
@@ -153,6 +105,13 @@ form .usuario_info_compra .input-box{
     border-color: #f5a967;
 }
 
+h4 {
+    text-align: center;
+    font-size: 25px;
+    margin: 6px;
+    margin-bottom: 15px;
+}
+
 @media (max-width: 584px){
     .principal{
         max-width: 100%;
@@ -169,7 +128,6 @@ form .usuario_info_compra .input-box{
         width: 0;
     }
 }
-
 @media (max-width: 584px){
     .principal{
         max-width: 100%;
@@ -185,55 +143,4 @@ form .usuario_info_compra .input-box{
     .usuario_info_compra::-webkit-scrollbar{
         width: 0;
     }
-}
-.logo1 img{
-    width: 130px;
-    height: 150px;
-    margin: auto;   
-    display: block; 
-    float: left;
-}
-.logo2 img{
-    width:300px;
-    height: 150px;
-    margin: auto;   
-    display: block;
-    float: center;
-}
-.logo3 img{
-    width: 130px;
-    height: 150px;
-    margin: auto;   
-    display: block;
-    float: right;
-}
-.logo4 img{
-    width: 130px;
-    height: 115px;
-    margin: auto;   
-    display: block; 
-    float: left;
-    padding-left: 10px;    
-    padding-right: 20px;
-}
-
-footer {
-    grid-area: foot;
-    background: #000000a1;
-    color: #fff;
-    border: 3px solid #f5a967;
-    border-radius: 20px;
-    margin-top: 30px;
-    font-size: 20px;  
-    text-align: center;
-}
-h4 {
-    text-align: center;
-    font-size: 25px;
-    margin: 6px;
-    margin-bottom: 15px;
-}
-ion-icon {
-    font-size: 100px;
-    color: white;
 }
