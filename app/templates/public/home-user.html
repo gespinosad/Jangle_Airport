@@ -1,13 +1,18 @@
 {% extends "public/plantilla/plantilla.html" %}
 {% block title %}Home User{% endblock %}
+
 {% block link %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/plantilla/plantilla.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/navBar.css') }}">
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/Usuario/home.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/Base.css') }}">
+
 {% endblock %}
 
-{% block principal %} 
+{% block Menunav%} 
+    <li><a href="/Vuelos">Plantilla</a></li>         
+    <li><a href="/mi-perfil-user">Plantilla</a></li>
+{% endblock %}
+
+{% block Centro %} 
     <div class="principal"> 
         <section class="filtrar">
             <select name="Origen" id="org" class="datos">
@@ -40,42 +45,42 @@
             <input class="consulta" type="submit" name="consulta" value="Consultar">
         </section>
 
-    {% endblock %}
-    {% block plantilla %}
-        <h1><b>Programación Vuelos</b></h1>
-        <table>
-            <tr>
-                <th>Origen</th>
-                <th>Destino</th>
-                <th>Fecha</th>
-                <th class="seleccion">Selección</th>
-            </tr>
-            <tr>
-                <td>Origen</th>
-                <td>Destino</th>
-                <td>Fecha</th>
-                <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
-            </tr>
-            <tr>
-                <td>Origen</th>
-                <td>Destino</th>
-                <td>Fecha</th>
-                <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
-            </tr>
-            <tr>
-                <td>Origen</th>
-                <td>Destino</th>
-                <td>Fecha</th>
-                <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
-            </tr>
-            <tr>
-                <td>Origen</th>
-                <td>Destino</th>
-                <td>Fecha</th>
-                <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
-            </tr>
-        </table>
-        
+        <section class="tabla">
+            <div class="principal">
+            <h1><b>Programación Vuelos</b></h1>
+            <table>
+                <tr>
+                    <th>Origen</th>
+                    <th>Destino</th>
+                    <th>Fecha</th>
+                    <th class="seleccion">Selección</th>
+                </tr>
+                <tr>
+                    <td>Origen</th>
+                    <td>Destino</th>
+                    <td>Fecha</th>
+                    <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
+                </tr>
+                <tr>
+                    <td>Origen</th>
+                    <td>Destino</th>
+                    <td>Fecha</th>
+                    <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
+                </tr>
+                <tr>
+                    <td>Origen</th>
+                    <td>Destino</th>
+                    <td>Fecha</th>
+                    <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
+                </tr>
+                <tr>
+                    <td>Origen</th>
+                    <td>Destino</th>
+                    <td>Fecha</th>
+                    <td class="seleccion"> <input type="radio" name="seleccionar-vuelo"> </td>
+                </tr>
+            </table>
+        </section>
 
         <section class="buttonComprar">
             <!-- Contenedor para centrar el botón, !!!!NO TOCAR!!!! Si tiene una mejor idea, hágalo :v -->
@@ -83,6 +88,7 @@
         </section>
         
     </div>
+
     {% endblock %}
     
     {% block menuDerecho %}
