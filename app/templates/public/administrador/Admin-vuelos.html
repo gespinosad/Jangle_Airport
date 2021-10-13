@@ -1,53 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "public/plantilla/plantilla.html" %}
+{% block title %}Administrar Vuelos{% endblock %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administrar Vuelos</title>
-    <link rel="stylesheet" href="/app/static/css/Administrador/Admin-vuelos.css">
-    <link rel="stylesheet" href="/app/static/css/navBar.css">
-</head>
+{% block link %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Administrador/Admin-vuelos.css') }}">
+{% endblock %}
 
-<body>
-    <header class="header">
-        <div class="logo1" id="l">
-            <img src="/app/static/img/header/Logo2.jpeg" alt="">
-        </div>
-        <div class="logo3" id="l">
-            <img src="/app/static/img/header/Logo2.jpeg" alt="">
-        </div>
-        <div class="logo2" id="l">
-            <img src="/app/static/img/header/Logo.jpeg" alt="">
-        </div>
-    </header>
+{% block Menunav%} 
+    <li><a href="/admin/admin_vuelos">Vuelos</a></li>
+    <li><a href="/admin/admin_cuentas">Cuentas</a></li>
+{% endblock %}
 
-    <div class="bg">
-        <img src="/app/static/img/ben-kim.jpg" class="mw-100" alt="">
-    </div>
-
-    <nav class="nav">
-        <div class="barra">
-            
-            <h2>Menu<div>
-                    <ion-icon class="image" name="menu-outline"></ion-icon>
-                </div>
-            </h2>
-
-            <ul>
-                <li><a href="/app/templates/public/administrador/Admin-vuelos.html">Vuelos</a></li>
-                <li><a href="/app/templates/public/administrador/Admin-cuentas.html">Cuentas</a></li>
-                <li><a href="Cerrar-sesion">Cerrar sesión</a></li>
-            </ul>
-
-        </div>
-    </nav>
-
+{% block Centro %}
     <div class="principal">
         <section class="filtrar">
             <input class="editar" type="submit" name="editar-vuelos" value="Editar"></input>
-            <form action="Agregar-vuelos.html">
+            <form action="/admin/agregar_vuelos">
                 <input class="agregar" type="submit" name="agregar-vuelos" value="Agregar">
             </form>
             <input class="consultar" type="submit" name="consultar-vuelos" value="Consultar">
@@ -125,19 +92,4 @@
 
         </section>
     </div>
-
-    <footer>
-        <div class="logo4">
-            <img src="/app/static/img/header/Logo2.jpeg" alt="">
-        </div>
-        <h4>Creadores:</h4>
-        <h2> * Jeison Martinez * Camilo Contreras * Gisela Espinosa * Brayan Duque * Santiago Urrego -
-            <strong>Contacto:</strong> 601 606 60 60 <strong>Correo:</strong> support@jangle.com
-        </h2>
-    </footer>
-
-</body>
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-</html>
+{% endblock %}
