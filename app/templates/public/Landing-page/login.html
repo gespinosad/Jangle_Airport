@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
@@ -22,8 +22,7 @@
     <link rel="mask-icon" href="/docs/5.1/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
     <link rel="icon" href="/docs/5.1/assets/img/favicons/favicon.ico">
     <meta name="theme-color" content="#7952b3">
-    <link rel="stylesheet" href="/app/static/css/plantilla/plantilla.css">
-    <link rel="stylesheet" href="/app/static/css/Landing-Page/login.css">
+    
 
 
     <style>
@@ -51,7 +50,11 @@
             align-items: center;
             padding-top: 40px;
             padding-bottom: 40px;
-            background-color: #f5f5f5;
+            background-image: url("/static/img/flying-airplane.jpg");
+            /* background-image: url("/app/static/img/flying-airplane.jpg"); */
+            background-size: 100%; /* Agregar fondo con imagen*/
+            background-size: cover;
+            background-position-x: center;
         }
 
         .form-signin {
@@ -88,15 +91,15 @@
         <form method="post" action="/ingreso">
           <img class="mb-4"  src="https://banner2.cleanpng.com/20180406/tie/kisspng-airplane-aircraft-maintenance-flight-transport-aeroplane-5ac7b14f05e3e0.1254718215230364950241.jpg"
           alt="" width="72" height="57">
-          <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+          <h1 class="h3 mb-3 fw-normal">Inicia sesión</h1>
       
           <div class="form-floating">
             <input type="text" class="form-control" id="floatingInput" name="user" placeholder="User"| required>
-            <label for="floatingInput">User</label>
+            <label for="floatingInput">Usuario</label>
           </div>
           <div class="form-floating">
             <input type="password" class="form-control"  name="password" id="floatingPassword" placeholder="Password" required>
-            <label for="floatingPassword">Password</label>
+            <label for="floatingPassword">Contraseña</label>
           </div>
       
           <div class="checkbox mb-3">
@@ -105,10 +108,10 @@
          
         </form>
 
-        <form method="get" action="/app/templates/public/Landing-page/registro.html">
+        <form method="get" action="/registro">
             <br>
             <button class="w-100 btn btn-lg btn-primary" type="submit">Registro</button>
-            <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+            <p class="mt-5 mb-3 text-muted">&copy; Jangle Airport</p>
         </form>
       </main>  
      

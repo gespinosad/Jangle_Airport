@@ -1,8 +1,107 @@
 {% extends "public/plantilla/plantilla.html" %}
-{% block title %}Mi Perfil Compra{% endblock %}
-{% block opcionesnavbar %}
-    <li><a href="/app/templates/public/home-user.html">Home</a></li>
-    <li><a href="/app/templates/public/usuarios/Mis-Vuelos.html">Mis Vuelos</a></li>
-    <li><a href="/app/templates/public/usuarios/Mi_Perfil_Usuario.html">Mi Perfil</a></li>
-{% endblock}
+{% block title %}Compra{% endblock %}
 
+
+{% block link %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/Usuario/Usuario_compra.css') }}">
+{% endblock %}
+
+{% block Menunav%} 
+    <li><a href="/mi-perfil-usuario">Mi Perfil</a></li>         
+    <li><a href="/mis-vuelos-usuario">Mis Vuelos</a></li>
+{% endblock %}
+
+    
+    
+    
+{% block Centro %}
+    <div class="principal">
+        <div class="titulo">Compra</div>
+
+        <form action="#">
+            <div class="usuario_compra">
+                <div class="input-box">
+                    <span class="details">Origen</span>
+                    <input type="text" onkeypress="return false;">
+                </div>  
+                <div class="input-box">
+                    <span class="details">Destino</span>
+                    <input type="text" onkeypress="return false;">
+                </div>  
+                <div class="input-box">
+                    <span class="details">Fecha / Hora</span>
+                    <input type="text" onkeypress="return false;">
+                </div>  
+                <div class="input-box">
+                    <span class="details"># Tickets</span>
+                    <input type="text" onkeypress="return false;">
+                </div>  
+                <div class="input-box">
+                    <span class="details">$ Subtotal</span>
+                    <input type="text" onkeypress="return false;">
+                </div>  
+                
+                <div class="button1">
+                    <input type="submit" value="Comprar">
+                </div>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
+
+
+{% block menuDerecho %}
+
+<div class="menuDerecho">
+        <div class="titulo">Información Vuelo</div>
+        <form action="#">
+            <div class="usuario_info_compra">
+                <div class="input-box">
+                    <span class="details">Codigo Vuelo</span>
+                    <input type="text" onkeypress="return false;">
+                </div>  
+                <div class="input-box">
+                    <span class="details">ID</span>
+                    <input type="text" onkeypress="return false;">
+                </div>  
+                <div class="input-box">
+                    <span class="details">ID Documento</span>
+                    <input type="text" onkeypress="return false;">
+                </div>  
+                <div class="input-box">
+                    <span class="details">Usuario</span>
+                    <input type="text" onkeypress="return false;">
+                </div>  
+                <div class="input-box">
+                    <span class="details">Piloto</span>
+                    <input type="text" onkeypress="return false;">
+                </div>  
+                <div class="input-box">
+                    <span class="details">Aerolinea</span>
+                    <input type="text" onkeypress="return false;">
+                </div>
+                <div class="input-box">
+                    <span class="details">Origen</span>
+                    <input type="text" onkeypress="return false;">
+                </div>
+                <div class="input-box">
+                    <span class="details">Destino</span>
+                    <input type="text" onkeypress="return false;">
+                </div>
+                <div class="input-box">
+                    <span class="details">Fecha / Hora</span>
+                    <input type="text" onkeypress="return false;">
+                </div>
+                <div class="input-box">
+                    <span class="details"># Tickets</span>
+                    <input type="text" onkeypress="return false;">
+                </div>
+                <div class="input-box">
+                    <span class="details">$ Total</span>
+                    <input type="text" onkeypress="return false;">
+                </div>
+            </div>    
+        </form>  
+</div>   
+{% endblock %}

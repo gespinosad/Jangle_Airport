@@ -1,0 +1,146 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas: 
+        "head head head"
+        "bg bg bg"
+        "lf cont rgh"
+        "foot foot foot";
+}  
+
+.principal{
+    grid-area: cont;
+    background: rgba(0, 0, 0, 0.493);
+    margin-top: 25px;
+    border: 3px solid #f5a967;
+    border-radius: 10px;    
+    display: flex;
+    flex-direction: column;
+    /* width: 65vh; */
+    width: 90%;
+}
+
+.menuDerecho {
+    grid-area: rgh;
+    background: rgba(0, 0, 0, 0.493);
+    margin-top: 25px;
+    border: 3px solid #f5a967;
+    border-radius: 10px;    
+    display: flex;
+    flex-direction: column;
+    width: 85vh;
+}
+
+input[type="submit"]
+{
+    position: relative;
+    width: 350px;
+    height: 50px;
+    border-radius: 10px 10px 10px 10px;  
+    border: 3px solid #f5a967;   
+    margin-left: 9vh;
+    margin-top: 10vh;  
+    
+}
+
+.titulo{
+    font-size: 50px;
+    font-weight: 500px;
+    text-align: center;
+    color: #fff;
+    margin-top:20px;
+}
+
+
+.principal form .usuario_compra{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 40px 0 12px 0;
+}
+
+.menuDerecho form .usuario_info_compra{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 40px 0 12px 0;
+}
+
+form .usuario_compra .input-box{
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+}
+
+form .usuario_info_compra .input-box{
+    margin-bottom: 10px;
+    width: calc(100% / 2 - 20px);
+}
+
+.input-box .details{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-size: 22px;
+    color: white;
+    margin-left: 15px;
+}
+
+.input-box input{
+    height: 45px;
+    width: 90%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 5px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+    margin-left: 15px;
+}
+
+.input-box input:valid{
+    border-color: #f5a967;
+}
+
+h4 {
+    text-align: center;
+    font-size: 25px;
+    margin: 6px;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 584px){
+    .principal{
+        max-width: 100%;
+    }
+    form .usuario_compra .input-box{
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    .principal form .usuario_compra{
+        max-width: 300px;
+        overflow-y: scroll;
+    }
+    .usuario_compra::-webkit-scrollbar{
+        width: 0;
+    }
+}
+@media (max-width: 584px){
+    .principal{
+        max-width: 100%;
+    }
+    form .usuario_info_compra .input-box{
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    .principal form .usuario_info_compra{
+        max-width: 300px;
+        overflow-y: scroll;
+    }
+    .usuario_info_compra::-webkit-scrollbar{
+        width: 0;
+    }
+}
