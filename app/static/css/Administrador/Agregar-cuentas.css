@@ -18,7 +18,7 @@ body {
     flex-direction: column;
 }
 .tabla{
-    list-style: none;
+    /* list-style: none; */
     padding:20px;
     width: 90%;
     margin:auto;
@@ -26,7 +26,7 @@ body {
     margin-right: 15%;
     border-radius: 10px;
     border: 3px solid #fff;
-    overflow: scroll;
+    
     background-color: rgba(0, 0, 0, 0.301) ;
 }
 .opc-agregar-cuentas {
@@ -99,12 +99,42 @@ body {
     height: 60px;
     text-align: center;
 }
-table{
+/* table{
     margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
     border-collapse: collapse;
+} */
+/* Ajustes a tabla, cabecera fija con scroll en el tbody */
+table{
+    border-collapse: collapse;
+    border: 5px solid #fff;
 }
+.tabla_info{
+    justify-content: center;
+    width: fit-content;
+    margin: auto;
+}
+table tbody::-webkit-scrollbar{
+    width: 0px;
+}
+table tbody {
+    height: 30vh;
+    overflow-y: auto;
+    width: 100%;
+}
+table thead,
+table tbody,
+table td,
+table th {
+    display: block;
+}
+table tbody td,
+table thead > tr > th {
+    float: left;
+    border-bottom-width: 0;
+}
+/* Ajustes a tabla, cabecera fija con scroll en el tbody */
 th{
     background: #080808;
 }

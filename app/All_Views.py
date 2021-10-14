@@ -71,6 +71,9 @@ app.config["SECRET_KEY"] = "contraseña123"
 # endregion
 
 
+
+# Landing Page
+
 @app.route("/")
 def login():
     return render_template("public/Landing-page/login.html")
@@ -80,6 +83,7 @@ def login():
 def registro():
     return render_template("public/Landing-page/registro.html")
 
+# Usuario
 
 @app.route("/mi-perfil-usuario")
 def my_profile_user():
@@ -99,7 +103,7 @@ def compra_user():
 def homeUser():
     return render_template("public/home-user.html")
 
-# este manejador enruta a un archivo html en el cual se encuentra  
+# Piloto
 
 @app.route("/mi-perfil-piloto")
 def piloto_mi_perfil():
