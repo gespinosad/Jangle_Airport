@@ -16,9 +16,10 @@ header {
 body{
     background-image: url("/static/img/flying-airplane.jpg");
     /* background-image: url("/app/static/img/flying-airplane.jpg"); */
-    background-size: 100%; /* Agregar fondo con imagen*/
+    background-size: 200vh; /* Agregar fondo con imagen*/
     background-size: cover;
     background-position-x: center;
+    min-height: 100vh;
 }
 .bg{
     grid-area: bg;
