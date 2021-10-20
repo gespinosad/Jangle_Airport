@@ -5,7 +5,7 @@ def obtener_vuelos():
     conexion = db.obtener_conexion()
     vuelos = []
     with conexion.cursor() as cursor:
-        cursor.execute("""select vuelos.idVuelos, vuelos.Origen, vuelos.Destinos, vuelos.Fecha, 
+        cursor.execute("""select vuelos.idVuelos, vuelos.Origen, vuelos.Destinos, vuelos.Fecha,
         vuelos.HoraSalida from vuelos limit 10""")
         vuelos = cursor.fetchall()
     conexion.close()
@@ -17,7 +17,7 @@ def obtener_vuelo_por_id(id):
     vuelo = None
     with conexion.cursor() as cursor:
         cursor.execute(
-            "select idVuelos, Origen, Destinos, Fecha, HoraSalida, Aviones_idAviones from vuelos where idVuelos = %s", (id,))
+            "select idVuelos, Origen, Destinos, Fecha, HoraSalida, Aviones_idAviones, Tickets, Total from vuelos where idVuelos = %s", (id,))
         vuelo = cursor.fetchone()
     conexion.close()
     return vuelo
@@ -28,7 +28,8 @@ def obtener_usuario_por_key(id, cc):
     vuelo = None
     with conexion.cursor() as cursor:
         cursor.execute(
-            "select documentoCliente, Nombre, Tickets, Total from cliente, vuelos where idVuelos=%s and documentoCliente=%s", (id, cc))
+            """select documentoCliente, Nombre, Tickets, Total
+                from cliente, vuelos where idVuelos=%s and documentoCliente=%s;""", (id, cc))
         vuelo = cursor.fetchone()
     conexion.close()
     return vuelo
