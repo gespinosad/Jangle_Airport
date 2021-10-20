@@ -15,91 +15,56 @@
     
     
 {% block Centro %}
-    <div class="principal">
-        <div class="titulo">Compra</div>
-
-        <form action="#">
-            <div class="usuario_compra">
-                <div class="input-box">
-                    <span class="details">Origen</span>
-                    <input type="text" onkeypress="return false;">
-                </div>  
-                <div class="input-box">
-                    <span class="details">Destino</span>
-                    <input type="text" onkeypress="return false;">
-                </div>  
-                <div class="input-box">
-                    <span class="details">Fecha / Hora</span>
-                    <input type="text" onkeypress="return false;">
-                </div>  
-                <div class="input-box">
-                    <span class="details"># Tickets</span>
-                    <input type="text" onkeypress="return false;">
-                </div>  
-                <div class="input-box">
-                    <span class="details">$ Subtotal</span>
-                    <input type="text" onkeypress="return false;">
-                </div>  
-                
-                <div class="button1">
-                    <input type="submit" value="Comprar">
-                </div>
-            </div>
+    <section class="principal">
+        <h3>Compra</h3>
+        <form action="">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Origen</th>
+                        <th>Destino</th>
+                        <th>Fecha</th>
+                        <th>Salida</th>
+                        <th>Avion</th>
+                    </tr>
+                </thead>
+            <tbody>
+                <tr>
+                    <td>{{vuelo[1]}}</td>
+                    <td>{{vuelo[2]}}</td>
+                    <td>{{vuelo[3]}}</td>
+                    <td>{{vuelo[4]}}</td>
+                    <td>{{vuelo[5]}}</td>
+                </tr>
+            </tbody>
+            </table>
         </form>
-    </div>
-
+    </section>
 {% endblock %}
 
-
 {% block menuDerecho %}
-
+<table>
+   {# display columns en vertical#}
+   <tr>
+       <th>{{vuelo[]}}</th>
+   </tr>
+</table>
 <div class="menuDerecho">
         <div class="titulo">Información Vuelo</div>
         <form action="#">
             <div class="usuario_info_compra">
-                <div class="input-box">
-                    <span class="details">Codigo Vuelo</span>
-                    <input type="text" onkeypress="return false;">
-                </div>  
-                <div class="input-box">
-                    <span class="details">ID</span>
-                    <input type="text" onkeypress="return false;">
-                </div>  
-                <div class="input-box">
-                    <span class="details">ID Documento</span>
-                    <input type="text" onkeypress="return false;">
-                </div>  
-                <div class="input-box">
-                    <span class="details">Usuario</span>
-                    <input type="text" onkeypress="return false;">
+               
                 </div>  
                 <div class="input-box">
                     <span class="details">Piloto</span>
-                    <input type="text" onkeypress="return false;">
-                </div>  
-                <div class="input-box">
-                    <span class="details">Aerolinea</span>
-                    <input type="text" onkeypress="return false;">
-                </div>
-                <div class="input-box">
-                    <span class="details">Origen</span>
-                    <input type="text" onkeypress="return false;">
-                </div>
-                <div class="input-box">
-                    <span class="details">Destino</span>
-                    <input type="text" onkeypress="return false;">
-                </div>
-                <div class="input-box">
-                    <span class="details">Fecha / Hora</span>
-                    <input type="text" onkeypress="return false;">
                 </div>
                 <div class="input-box">
                     <span class="details"># Tickets</span>
-                    <input type="text" onkeypress="return false;">
+                    
                 </div>
                 <div class="input-box">
                     <span class="details">$ Total</span>
-                    <input type="text" onkeypress="return false;">
+                    
                 </div>
             </div>    
         </form>  

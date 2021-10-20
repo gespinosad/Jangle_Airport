@@ -1,7 +1,7 @@
 from app import app
 from datetime import datetime
 from flask import render_template, request, redirect, flash
-
+from app import dbController
 
 # from flask_sqlalchemy import SQLAlchemy
 # from flask_wtf import FlaskForm
@@ -12,8 +12,8 @@ from flask import render_template, request, redirect, flash
 # contendra todas nuestra vistas
 
 # Landing Page
-
 @app.route("/")
+@app.route("/login")
 def login():
     return render_template("public/Landing-page/login.html")
 
@@ -35,14 +35,24 @@ def mis_vuelos_user():
     return render_template("/public/usuarios/Mis_Vuelos_Usuario.html")
 
 
-@app.route("/compra-usuario")
-def compra_user():
-    return render_template("/public/usuarios/Usuario_compra.html")
+@app.route("/compra-usuario/<int:id>")
+def compra_user(id):
+    vuelo = dbController.obtener_vuelo_por_id(id)
+    return render_template("/public/usuarios/Usuario_compra.html", vuelo=vuelo)
 
+
+# @app.route("/actualizar_juego", methods=["POST"])
+# def actualizar_juego():
+#     id = request.form["id"]
+#     nombre = request.form["origen"]
+
+#     controlador_juegos.actualizar_juego(nombre, descripcion, precio, id)
+#     return redirect("/juegos")
 
 @app.route("/home-user")
 def homeUser():
-    return render_template("public/home-user.html")
+    vuelos = dbController.obtener_vuelos()
+    return render_template("public/home-user.html", vuelos=vuelos)
 
 # Piloto
 
