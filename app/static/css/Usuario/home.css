@@ -79,7 +79,7 @@ td, th{
     text-align: center;
 }
 .reserva{
-    width: 90%;
+    width: 100%;
     padding: 25px;   
     border: 3px solid #f5a967;
     border-radius: 100px;
@@ -91,7 +91,7 @@ td, th{
 .buttonComprar {
     list-style: none;
     padding: 0%;
-    width: 70%;
+    width: 70%; /*Este quedó como estaba*/
     /*! margin:auto; */
     /*! margin-top: 15px; */
     align-self: center;
