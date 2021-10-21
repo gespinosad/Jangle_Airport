@@ -44,3 +44,14 @@ def actualizar_juego(tickets, piloto):
                        (tickets, piloto))
     conexion.commit()
     conexion.close()
+
+
+def buscar_usuario_por_id():
+    conexion = db.obtener_conexion()
+    user = None
+    with conexion.cursor() as cursor:
+        cursor.execute(
+            "select idVuelos, Origen, Destinos, Fecha, HoraSalida, Aviones_idAviones, Tickets, Total from vuelos where idVuelos = %s", (id,))
+        user = cursor.fetchone()
+    conexion.close()
+    return user

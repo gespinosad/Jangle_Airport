@@ -1,6 +1,6 @@
 from app import app
 from datetime import datetime
-from flask import render_template, request, redirect, flash
+from flask import Flask, render_template, request, redirect, flash, session, url_for
 from app import dbController
 
 # from flask_sqlalchemy import SQLAlchemy
@@ -10,18 +10,48 @@ from app import dbController
 
 
 # contendra todas nuestra vistas
-
 # Landing Page
+
+
 @app.route("/")
-@app.route("/login")
+@app.route("/login", methods=["POST", "GET"])
 def login():
-    return render_template("public/Landing-page/login.html")
+    if request.method == "POST":
+        user = request.form["CC"]
+        contraseña = request.form["contraseña"]
+        if user == "1001" and contraseña == "123":
+            session["usuario"] = user
+            # Aquí puedes colocar más datos. Por ejemplo
+            # session["nivel"] = "administrador"
+            return redirect(url_for("homeUser"))
+    else:
+        # Si NO coincide, lo regresamos
+        # flash("Documento o contraseña incorrectos")
+        return render_template("public/Landing-page/login.html")
 
 
 @app.route("/registro")  # esto es el link que ponemos en el menú para cambiar de pagina
 def registro():
     return render_template("public/Landing-page/registro.html")
 
+# Cerrar sesión
+
+
+@app.route("/logout")
+def logout():
+    session.pop("usuario", None)
+    return redirect("/login")
+
+
+@app.before_request
+def antes_de_cada_peticion():
+    ruta = request.path
+    print("imprimiendo ruta: ", ruta)
+    # Si no ha iniciado sesión y no quiere ir a algo relacionado al login, lo redireccionamos al login
+    if not 'usuario' in session and ruta != "/login" and not ruta.startswith("/static"):
+        return redirect("/login")
+        # flash("Inicia sesión para continuar")
+    # Si ya ha iniciado, no hacemos nada, es decir lo dejamos pasar
 # Usuario
 
 
