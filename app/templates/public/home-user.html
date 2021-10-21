@@ -55,7 +55,7 @@
                         <th>Origen</th>
                         <th>Destino</th>
                         <th>Fecha</th>
-                        <th>Salida</th>
+                        <th>Comprar</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -65,7 +65,7 @@
                             <td>{{vuelo[2]}}</td>
                             <td>{{vuelo[3]}}</td>
                             <td>             
-                                <a href="{{url_for('compra_user', id=vuelo[0])}}" class="button is-info">Comprar</a>
+                                <a id="comprarusuario" href="{{url_for('compra_user', id=vuelo[0])}}" class="button is-info">Comprar</a>
                             </td>
                         </tr>
                     {% endfor %}
