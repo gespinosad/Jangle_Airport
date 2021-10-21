@@ -24,10 +24,7 @@ def login():
             # Aquí puedes colocar más datos. Por ejemplo
             # session["nivel"] = "administrador"
             return redirect(url_for("homeUser"))
-    else:
-        # Si NO coincide, lo regresamos
-        # flash("Documento o contraseña incorrectos")
-        return render_template("public/Landing-page/login.html")
+    return render_template("public/Landing-page/login.html")
 
 
 @app.route("/registro")  # esto es el link que ponemos en el menú para cambiar de pagina

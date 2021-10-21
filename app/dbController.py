@@ -23,7 +23,7 @@ def obtener_vuelo_por_id(id):
     return vuelo
 
 
-def obtener_usuario_por_key(id, cc):
+def obtener_usuario_por_key(id, cc):  # !no se esta usando
     conexion = db.obtener_conexion()
     vuelo = None
     with conexion.cursor() as cursor:
@@ -46,12 +46,12 @@ def actualizar_juego(tickets, piloto):
     conexion.close()
 
 
-def buscar_usuario_por_id():
+def buscar_usuario_por_doc(cc):  # para buscar en login si el usuario existe en la db
     conexion = db.obtener_conexion()
     user = None
     with conexion.cursor() as cursor:
         cursor.execute(
-            "select idVuelos, Origen, Destinos, Fecha, HoraSalida, Aviones_idAviones, Tickets, Total from vuelos where idVuelos = %s", (id,))
+            "SELECT documentoCliente, Contraseña FROM cliente where documentoCliente= %s", (cc,))
         user = cursor.fetchone()
     conexion.close()
     return user
