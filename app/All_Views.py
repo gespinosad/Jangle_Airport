@@ -18,12 +18,14 @@ from app import dbController
 def login():
     if request.method == "POST":
         user = request.form["CC"]
+        getUser = dbController.buscar_usuario_por_doc(user)
         contraseña = request.form["contraseña"]
-        if user == "1001" and contraseña == "123":
-            session["usuario"] = user
-            # Aquí puedes colocar más datos. Por ejemplo
-            # session["nivel"] = "administrador"
-            return redirect(url_for("homeUser"))
+        if getUser != None:
+            if user == str(getUser[0]) and contraseña == str(getUser[1]):
+                session["usuario"] = user
+                # Aquí puedes colocar más datos. Por ejemplo
+                # session["nivel"] = "administrador"
+                return redirect(url_for("homeUser"))
     return render_template("public/Landing-page/login.html")
 
 
