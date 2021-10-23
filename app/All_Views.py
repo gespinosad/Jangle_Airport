@@ -2,13 +2,14 @@ from app import app
 from datetime import datetime
 from flask import Flask, render_template, request, redirect, flash, session, url_for
 from app import dbController
-
+from passlib.hash import pbkdf2_sha256
 # from flask_sqlalchemy import SQLAlchemy
 # from flask_wtf import FlaskForm
 # from wtforms import StringField, SubmitField
-# from wtforms.validators import DataRequired
+from wtforms.validators import DataRequired, ValidationError
 
-
+# https://www.youtube.com/watch?v=xbedZg38dy4
+# https://www.youtube.com/watch?v=L0b_0KhkuBk
 # contendra todas nuestra vistas
 # Landing Page
 
@@ -20,17 +21,22 @@ def login():
         user = request.form["CC"]
         getUser = dbController.buscar_usuario_por_doc(user)
         contraseña = request.form["contraseña"]
+        # comparar la contraseña asi:
+        #! if pbkdf2_sha256.verify(contraseña, getUser[1])
         if getUser != None:
             if user == str(getUser[0]) and contraseña == str(getUser[1]):
                 session["usuario"] = user
                 # Aquí puedes colocar más datos. Por ejemplo
                 # session["nivel"] = "administrador"
                 return redirect(url_for("homeUser"))
+        #! raise ValidationError("Usuario o contraseña incorrectos")
     return render_template("public/Landing-page/login.html")
 
 
 @app.route("/registro")  # esto es el link que ponemos en el menú para cambiar de pagina
 def registro():
+
+    #! hashed_pswd = pbkdf2_sha256.hash(contraseña)  hashear contraseña
     return render_template("public/Landing-page/registro.html")
 
 # Cerrar sesión
@@ -61,7 +67,8 @@ def my_profile_user():
 
 @app.route("/mis-vuelos-usuario")
 def mis_vuelos_user():
-    return render_template("/public/usuarios/Mis_Vuelos_Usuario.html")
+    miVuelo = dbController.get_vuelo_por_doc_user(session["usuario"])
+    return render_template("/public/usuarios/Mis_Vuelos_Usuario.html", miVuelo=miVuelo)
 
 
 @app.route("/compra-usuario/<int:id>")

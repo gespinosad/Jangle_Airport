@@ -25,46 +25,35 @@
 
 {% block Centro %} 
     <div class="principal"> 
-        <section class="tabla_info_vuelo">
-
+       
             <h1>Información Vuelo</h1>
-            <table class="table_info_vuelos">
+            <table id="table">
                 <tr>
-                    <td><b>CODIGO :</b></td>
-                    <td>información</td>
-                    <td><b>ID AVION :</b></td>
-                    <td>información</td>
+                    <th>Usuario :</th>
+                    <td>{{miVuelo[3]}}</td>
+                    <th>Documento: </th>
+                    <td>{{miVuelo[2]}}</td>
                 </tr>
                 <tr>
-                    <td><b>ID USUARIO :</b></td>
-                    <td>información</td>
-                    <td><b>USUARIO :</b></td>
-                    <td>información</td>
+                    <th>Origen :</th>
+                    <td>{{miVuelo[4]}}</td>
+                    <th>Destino: </th>
+                    <td>{{miVuelo[5]}}</td>
                 </tr>
                 <tr>
-                    <td><b>PILOTO :</b></td>
-                    <td>información</td>
-                    <td><b>AEROLINEA :</b></td>
-                    <td>información</td>
+                    <th>Fecha :</th>
+                    <td>{{miVuelo[6]}}</td>
+                    <th>Tickets: </th>
+                    <td>{{miVuelo[7]}}</td>
                 </tr>
                 <tr>
-                    <td><b>ORIGEN :</b></td>
-                    <td>información</td>
-                    <td><b>DESTINO :</b></td>
-                    <td>información</td>
+                    <th>Vuelo id: </th>
+                    <td>{{miVuelo[0]}}</td>
+                    <th>Avion: </th>
+                    <td>{{miVuelo[1]}}</td>
                 </tr>
-                <tr>
-                    <td><b>FECHA :</b></td>
-                    <td>información</td>
-                    <td><b>TICKETS :</b></td>
-                    <td>información</td>
-                </tr>
-                <tr>
-                    <td><b>ESTADO :</b></td>
-                    <td>información</td>
-                </tr>
-            </table>
-        </section>   
+            </table>  
+     
     </div>
 {% endblock %}
 

@@ -23,16 +23,20 @@ def obtener_vuelo_por_id(id):
     return vuelo
 
 
-def obtener_usuario_por_key(id, cc):  # !no se esta usando
+def get_vuelo_por_doc_user(cc):
     conexion = db.obtener_conexion()
-    vuelo = None
+    usuario = None
     with conexion.cursor() as cursor:
         cursor.execute(
-            """select documentoCliente, Nombre, Tickets, Total
-                from cliente, vuelos where idVuelos=%s and documentoCliente=%s;""", (id, cc))
-        vuelo = cursor.fetchone()
+            """SELECT vuelos.idVuelos, aviones.idAviones, cliente.documentoCliente, cliente.Nombre, 
+vuelos.Origen, vuelos.Destinos, vuelos.Fecha, vuelos.Tickets 
+from vuelos inner join aviones on vuelos.Aviones_idAviones = aviones.idAviones 
+inner join vuelosadscritos on vuelosadscritos.vuelos_idVuelos = vuelos.idVuelos 
+inner join cliente on cliente.documentoCliente = vuelosadscritos.cliente_documentoCliente 
+where cliente.documentoCliente = %s""", (cc,))
+        usuario = cursor.fetchone()
     conexion.close()
-    return vuelo
+    return usuario
 
 # -falta
 
