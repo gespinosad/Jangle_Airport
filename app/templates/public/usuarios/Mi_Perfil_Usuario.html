@@ -21,31 +21,31 @@
             <div class="Perfil_usuario">
                 <div class="input-box">
                     <span class="details">Nombre</span>
-                    <input type="text" placeholder="Introduzca su nombre" required>
+                    <input type="text" value="{{perfil_user[0]}}" onkeypress="return false;" required>
                 </div>
                 <div class="input-box">
                     <span class="details">Apellido</span>
-                    <input type="text" placeholder="Introduzca su apellido" required>
+                    <input type="text"  value= "{{perfil_user[1]}}" onkeypress="return false;" required>
                 </div>
                 <div class="input-box">
                     <span class="details">Edad</span>
-                    <input type="number" min="18" max="120" pattern="^[0-9]+" onkeypress="return false;" placeholder="Introduzca su edad" required>
+                    <input type="number" min="18" max="120" pattern="^[0-9]+" value= "{{perfil_user[2]}}" onkeypress="return false;" required>
                 </div>
                 <div class="input-box">
                     <span class="details">Id usuario</span>
-                    <input type="text" onkeypress="return false;" placeholder="Introduzca su id de usuario" required>
+                    <input type="text" value= "{{perfil_user[3]}}" onkeypress="return false;" required>
                 </div>
                 <div class="input-box">
                     <span class="details">Id documento</span>
-                    <input type="number" min="1" placeholder="Introduzca su id de documento" required>
+                    <input type="number" value= "{{perfil_user[4]}}" onkeypress="return false;" required>
                 </div>
                 <div class="input-box">
                     <span class="details">Contraseña</span>
-                    <input type="text" onkeypress="return false;" placeholder="Introduzca su contraseña" required>
+                    <input type="password" onkeypress="return false;"  placeholder="Introduzca su contraseña" required>
                 </div>
                 <div class="input-box">
                     <span class="details">Email</span>
-                    <input type="email" placeholder="Introduzca su email" required>
+                    <input type="email" value="{{perfil_user[5]}}" placeholder="Introduzca su email" onkeypress="return false;" required>
                 </div>
                 <div class="input-box">
                     <span class="details">Nueva contraseña</span>
