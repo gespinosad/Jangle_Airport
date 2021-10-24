@@ -41,13 +41,45 @@ where cliente.documentoCliente = %s""", (cc,))
 # -falta
 
 
-def actualizar_juego(tickets, piloto):
+def hacer_Compra(tickets, cc):
     conexion = db.obtener_conexion()
     with conexion.cursor() as cursor:
-        cursor.execute("UPDATE juegos SET nombre = %s, descripcion = %s, precio = %s WHERE id = %s",
-                       (tickets, piloto))
+        cursor.execute("""insert into vuelosadscritos
+                        select v.idVuelos,
+                        v.Aviones_idAviones, %s as document, %s as tickets, v.Total * %s as Total
+                        from vuelos v
+                        where v.idVuelos = 555;""",
+                       (cc, tickets, tickets))
     conexion.commit()
     conexion.close()
+
+# Select data - using named placeholders (named style)
+
+
+def hacer_compra2(tickets, cc, idVuelo):
+    sql_ = """insert into vuelosadscritos
+                        select v.idVuelos,
+                        v.Aviones_idAviones, :cc as document, :tickets as tickets, v.Total * :tickets as Total
+                        from vuelos v
+                        where v.idVuelos = :idVuelo;"""
+    par_ = {"cc": cc, "tickets": tickets, "idVuelo": idVuelo}
+    con = db.obtener_conexion()
+    with con.cursor() as cursor:
+        cursor.execute(sql_, par_)
+        con.commit()
+        con.close()
+
+
+def query_named(point_id="", analyte="", sampling_date=""):
+    sql_ = "SELECT * FROM gw_assay WHERE point_id = :id AND analyte = :a AND sampling_date = :d"
+    par_ = {"id": point_id, "a": analyte, "d": sampling_date}
+
+    cnn = sqlite3.connect("groundwater.db")
+    cur = cnn.cursor()
+    cur.execute(sql_, par_)
+    records = cur.fetchall()
+    cnn.close()
+    return records
 
 
 def buscar_usuario_por_doc(cc):  # para buscar en login si el usuario existe en la db
