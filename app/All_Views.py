@@ -62,7 +62,8 @@ def antes_de_cada_peticion():
 
 @app.route("/mi-perfil-usuario")
 def my_profile_user():
-    return render_template("/public/usuarios/Mi_Perfil_Usuario.html")
+    perfil_user = dbController.obtener_perfil_por_cccc(session["usuario"])
+    return render_template("/public/usuarios/Mi_Perfil_Usuario.html", perfil_user = perfil_user)
 
 
 @app.route("/mis-vuelos-usuario")

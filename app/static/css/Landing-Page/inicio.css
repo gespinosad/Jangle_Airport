@@ -25,16 +25,15 @@ body{
 }
 .form__title {
     font-size: 2rem;
-    margin-bottom: .5em;
 }
 .form__container {
-
     display: grid;
     gap: 1em;
 }
 .form__group {
     position: relative;
     --color: #5757577e;
+    margin-top: 1.5em;
 }
 .form__input {
     width: 100%;
@@ -51,7 +50,6 @@ body{
 .form__input:not(:placeholder-shown){
     color: #4d4646;
 }
-
 
 .form__input:focus + .form__label,
 .form__input:not(:placeholder-shown) + .form__label{
@@ -71,11 +69,12 @@ body{
 }
 .form__submit {
     background: #3866f2;
+    margin-top: 1em;
     color: white;
     font-family:  'Roboto', sans-serif;
     font-weight: 300;
     font-size: 1rem;
-    padding: .8em 0;
+    padding: .8em .5em;
     border: none;
     border-radius: .5em;
 }
