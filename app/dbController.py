@@ -70,18 +70,6 @@ def hacer_compra2(tickets, cc, idVuelo):
         con.close()
 
 
-def query_named(point_id="", analyte="", sampling_date=""):
-    sql_ = "SELECT * FROM gw_assay WHERE point_id = :id AND analyte = :a AND sampling_date = :d"
-    par_ = {"id": point_id, "a": analyte, "d": sampling_date}
-
-    cnn = sqlite3.connect("groundwater.db")
-    cur = cnn.cursor()
-    cur.execute(sql_, par_)
-    records = cur.fetchall()
-    cnn.close()
-    return records
-
-
 def buscar_usuario_por_doc(cc):  # para buscar en login si el usuario existe en la db
     conexion = db.obtener_conexion()
     user = None
