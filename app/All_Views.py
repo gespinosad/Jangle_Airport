@@ -63,7 +63,7 @@ def antes_de_cada_peticion():
 @app.route("/mi-perfil-usuario")
 def my_profile_user():
     perfil_user = dbController.obtener_perfil_por_cccc(session["usuario"])
-    return render_template("/public/usuarios/Mi_Perfil_Usuario.html", perfil_user = perfil_user)
+    return render_template("/public/usuarios/Mi_Perfil_Usuario.html", perfil_user=perfil_user)
 
 
 @app.route("/mis-vuelos-usuario")
@@ -78,13 +78,15 @@ def compra_user(id):
     return render_template("/public/usuarios/Usuario_compra.html", vuelo=vuelo)
 
 
-# @app.route("/actualizar_juego", methods=["POST"])
-# def actualizar_juego():
-#     id = request.form["id"]
-#     nombre = request.form["origen"]
+@app.route('/compra-usuario', methods=["POST"])
+def hacerCompra():
+    cc = session["usuario"]
+    tickets = request.form["nTickets"]
+    idVuelo = request.form["id"]
+    print(id)
+    dbController.comprarTickets(tickets, cc, idVuelo)
+    return redirect("/home-user")
 
-#     controlador_juegos.actualizar_juego(nombre, descripcion, precio, id)
-#     return redirect("/juegos")
 
 @app.route("/home-user")
 def homeUser():

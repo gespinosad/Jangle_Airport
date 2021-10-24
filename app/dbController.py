@@ -41,33 +41,33 @@ where cliente.documentoCliente = %s""", (cc,))
 # -falta
 
 
-def hacer_Compra(tickets, cc):
+def comprarTickets(tickets, cc, idVuelo):
     conexion = db.obtener_conexion()
     with conexion.cursor() as cursor:
         cursor.execute("""insert into vuelosadscritos
                         select v.idVuelos,
                         v.Aviones_idAviones, %s as document, %s as tickets, v.Total * %s as Total
                         from vuelos v
-                        where v.idVuelos = 555;""",
-                       (cc, tickets, tickets))
+                        where v.idVuelos = %s;""",
+                       (cc, tickets, tickets, idVuelo))
     conexion.commit()
     conexion.close()
 
 # Select data - using named placeholders (named style)
 
 
-def hacer_compra2(tickets, cc, idVuelo):
-    sql_ = """insert into vuelosadscritos
-                        select v.idVuelos,
-                        v.Aviones_idAviones, :cc as document, :tickets as tickets, v.Total * :tickets as Total
-                        from vuelos v
-                        where v.idVuelos = :idVuelo;"""
-    par_ = {"cc": cc, "tickets": tickets, "idVuelo": idVuelo}
-    con = db.obtener_conexion()
-    with con.cursor() as cursor:
-        cursor.execute(sql_, par_)
-        con.commit()
-        con.close()
+# def hacer_compra2(tickets, cc, idVuelo):
+#     sql_ = """insert into vuelosadscritos
+#                         select v.idVuelos,
+#                         v.Aviones_idAviones, :cc as document, :tickets as tickets, v.Total * :tickets as Total
+#                         from vuelos v
+#                         where v.idVuelos = :idVuelo;"""
+#     par_ = {"cc": cc, "tickets": tickets, "idVuelo": idVuelo}
+#     con = db.obtener_conexion()
+#     with con.cursor() as cursor:
+#         cursor.execute(sql_, par_)
+#         con.commit()
+#         con.close()
 
 
 def buscar_usuario_por_doc(cc):  # para buscar en login si el usuario existe en la db
@@ -80,34 +80,61 @@ def buscar_usuario_por_doc(cc):  # para buscar en login si el usuario existe en 
     conexion.close()
     return user
 
+
 def obtener_perfil_por_cccc(cc):
     conexion = db.obtener_conexion()
     perfil_user = None
     with conexion.cursor() as cursor:
         cursor.execute(
-           "SELECT Nombre, Apellido, Edad, Roles_idRoles, documentoCliente, Email FROM cliente WHERE documentoCliente = %s", (cc,))
+            "SELECT Nombre, Apellido, Edad, Roles_idRoles, documentoCliente, Email FROM cliente WHERE documentoCliente = %s", (cc,))
         perfil_user = cursor.fetchone()
     conexion.close()
     return perfil_user
 
 
+def hacer_CompraAD(tickets, cc, idVuelo):
+    conexion = db.obtener_conexion()
+    with conexion.cursor() as cursor:
+        cursor.execute("""insert into vuelosadscritos
+                        select v.idVuelos,
+                        v.Aviones_idAviones, %s as document, %s as tickets, v.Total * %s as Total
+                        from vuelos v
+                        where v.idVuelos = %s;""",
+                       (cc, tickets, tickets, idVuelo))
+    conexion.commit()
+    conexion.close()
+
+# Select data - using named placeholders (named style)
 
 
-    #- en el html va algo así
+def hacer_compra2AD(tickets, cc, idVuelo):
+    sql_ = """insert into vuelosadscritos
+                        select v.idVuelos,
+                        v.Aviones_idAviones, :cc as document, :tickets as tickets, v.Total * :tickets as Total
+                        from vuelos v
+                        where v.idVuelos = :idVuelo;"""
+    par_ = {"cc": cc, "tickets": tickets, "idVuelo": idVuelo}
+    con = db.obtener_conexion()
+    with con.cursor() as cursor:
+        cursor.execute(sql_, par_)
+        con.commit()
+        con.close()
+
+    # - en el html va algo así
     #                    <td>
     #                         <form action="{{url_for('eliminar_juego')}}" method="POST">
     #                             <input type="hidden" name="id" value="{{juego[0]}}">
     #                             <button class="button is-danger">Eliminar</button>
     #                         </form>
     #                     </td>
-    #- en dbConroller va algo así: 
+    # - en dbConroller va algo así:
     # def eliminar_juego(id):
     # conexion = obtener_conexion()
     # with conexion.cursor() as cursor:
     #     cursor.execute("DELETE FROM juegos WHERE id = %s", (id,))
     # conexion.commit()
     # conexion.close()
-    #- en allviews va algo así:
+    # - en allviews va algo así:
 #     @app.route("/eliminar_juego", methods=["POST"])
 # def eliminar_juego():
 #     controlador_juegos.eliminar_juego(request.form["id"])

@@ -43,10 +43,11 @@
     </form>
     <h3>Tickets: {{vuelo[6]}}</h3>
     <h3>Total: {{vuelo[7]}}</h3>
-    <form action="{{url_for('eliminar_juego')}}" method="POST">
-        <input type="hidden" name="id" value="{{juego[0]}}">
-        <button class="button">Comprar</button>
-     </form>
+    <form action="{{url_for('hacerCompra')}}" method="POST">
+                    <input type="hidden" name="id" value="{{vuelo[0]}}">
+                    <input required type="number" class="input"  name="nTickets">
+                    <button class="button is-danger">Comprarrr</button>
+    </form>
 </section>
 {% endblock %}
 
