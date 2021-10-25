@@ -4,9 +4,11 @@ from flask import Flask, render_template, request, redirect, flash, session, url
 from app import dbController
 from passlib.hash import pbkdf2_sha256
 # from flask_sqlalchemy import SQLAlchemy
-# from flask_wtf import FlaskForm
-# from wtforms import StringField, SubmitField
-from wtforms.validators import DataRequired, ValidationError
+# # from flask_wtf import FlaskForm
+# # from wtforms import StringField, SubmitField
+# from wtforms.validators import DataRequired, ValidationError
+# from flask_login import LoginManager
+# from flask_admin.contrib.sqla import ModelView
 
 # https://www.youtube.com/watch?v=xbedZg38dy4
 # https://www.youtube.com/watch?v=L0b_0KhkuBk
@@ -19,23 +21,28 @@ from wtforms.validators import DataRequired, ValidationError
 def login():
     if request.method == "POST":
         user = request.form["CC"]
-        getUser = dbController.buscar_usuario_por_doc(user)
+        getUser = dbController.searchAccount(user)
         contraseña = request.form["contraseña"]
         # comparar la contraseña asi:
         #! if pbkdf2_sha256.verify(contraseña, getUser[1])
         if getUser != None:
             if user == str(getUser[0]) and contraseña == str(getUser[1]):
                 session["usuario"] = user
+                session["account"] = getUser[2]  # me dara el idRoles
                 # Aquí puedes colocar más datos. Por ejemplo
                 # session["nivel"] = "administrador"
-                return redirect(url_for("homeUser"))
+                if session["account"] == 1:
+                    return redirect(url_for("admin_adm_cuentas"))
+                elif session["account"] == 3:
+                    return redirect(url_for("piloto_mis_vuelos"))
+                if session["account"] == 2:
+                    return redirect(url_for("homeUser"))
         #! raise ValidationError("Usuario o contraseña incorrectos")
     return render_template("public/Landing-page/login.html")
 
 
 @app.route("/registro")  # esto es el link que ponemos en el menú para cambiar de pagina
 def registro():
-
     #! hashed_pswd = pbkdf2_sha256.hash(contraseña)  hashear contraseña
     return render_template("public/Landing-page/registro.html")
 
@@ -62,45 +69,54 @@ def antes_de_cada_peticion():
 
 @app.route("/mi-perfil-usuario")
 def my_profile_user():
-    perfil_user = dbController.obtener_perfil_por_cccc(session["usuario"])
-    return render_template("/public/usuarios/Mi_Perfil_Usuario.html", perfil_user=perfil_user)
+    if session["account"] == 2:
+        perfil_user = dbController.obtener_perfil_por_cccc(session["usuario"])
+        return render_template("/public/usuarios/Mi_Perfil_Usuario.html", perfil_user=perfil_user)
 
 
 @app.route("/mis-vuelos-usuario")
 def mis_vuelos_user():
-    miVuelo = dbController.get_vuelo_por_doc_user(session["usuario"])
-    return render_template("/public/usuarios/Mis_Vuelos_Usuario.html", miVuelo=miVuelo)
+    if session["account"] == 2:
+        miVuelo = dbController.get_vuelo_por_doc_user(session["usuario"])
+        return render_template("/public/usuarios/Mis_Vuelos_Usuario.html", miVuelo=miVuelo)
 
 
 @app.route("/compra-usuario/<int:id>")
 def compra_user(id):
-    vuelo = dbController.obtener_vuelo_por_id(id)
-    return render_template("/public/usuarios/Usuario_compra.html", vuelo=vuelo)
+    if session["account"] == 2:
+        vuelo = dbController.obtener_vuelo_por_id(id)
+        return render_template("/public/usuarios/Usuario_compra.html", vuelo=vuelo)
 
 
 @app.route('/compra-usuario', methods=["POST"])
 def hacerCompra():
-    cc = session["usuario"]
-    tickets = request.form["nTickets"]
-    idVuelo = request.form["id"]
-    print(id)
-    dbController.comprarTickets(tickets, cc, idVuelo)
-    return redirect("/home-user")
+    if session["account"] == 2:
+        cc = session["usuario"]
+        tickets = request.form["nTickets"]
+        idVuelo = request.form["id"]
+        print(id)
+        dbController.comprarTickets(tickets, cc, idVuelo)
+        return redirect("/home-user")
 
 
 @app.route("/home-user")
 def homeUser():
-    vuelos = dbController.obtener_vuelos()
-    return render_template("public/home-user.html", vuelos=vuelos)
+    if session["account"] == 2:
+        vuelos = dbController.obtener_vuelos()
+        return render_template("public/home-user.html", vuelos=vuelos)
 
 # Piloto
 
 
 @app.route("/mi-perfil-piloto")
 def piloto_mi_perfil():
-    return render_template("/public/Piloto/mi-perfil.html")
+    if session["account"] == 3:
+        return render_template("/public/Piloto/mi-perfil.html")
+    return redirect(url_for("logout"))
 
 
 @app.route("/mis-vuelos-piloto")
 def piloto_mis_vuelos():
-    return render_template("/public/Piloto/mis-vuelos.html")
+    if session["account"] == 3:
+        return render_template("/public/Piloto/mis-vuelos.html")
+    return redirect(url_for("logout"))

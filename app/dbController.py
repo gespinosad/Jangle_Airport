@@ -1,4 +1,5 @@
 from app import db
+import pymysql
 
 
 def obtener_vuelos():
@@ -69,15 +70,23 @@ def comprarTickets2(tickets, cc, idVuelo):
         con.close()
 
 
-def buscar_usuario_por_doc(cc):  # para buscar en login si el usuario existe en la db
+def searchAccount(cc):
     conexion = db.obtener_conexion()
-    user = None
+    usuario = None
     with conexion.cursor() as cursor:
         cursor.execute(
-            "SELECT documentoCliente, Contraseña FROM cliente where documentoCliente= %s", (cc,))
-        user = cursor.fetchone()
+            """
+                select documentoAdministrador,Contraseña, Roles_idRoles from administrador
+                where documentoAdministrador = %s
+                union
+                select documentoCliente,Contraseña, Roles_idRoles from cliente
+                where documentoCliente = %s
+                union
+                select documentoPiloto,Contraseña, Roles_idRoles from piloto
+                where documentoPiloto = %s""", (cc, cc, cc,))
+    usuario = cursor.fetchone()
     conexion.close()
-    return user
+    return usuario
 
 
 def obtener_perfil_por_cccc(cc):
