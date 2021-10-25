@@ -23,24 +23,89 @@ def obtener_vuelo_por_id(id):
     return vuelo
 
 
-def obtener_usuario_por_key(id, cc):
+def get_vuelo_por_doc_user(cc):
     conexion = db.obtener_conexion()
-    vuelo = None
+    usuario = None
     with conexion.cursor() as cursor:
         cursor.execute(
-            """select documentoCliente, Nombre, Tickets, Total
-                from cliente, vuelos where idVuelos=%s and documentoCliente=%s;""", (id, cc))
-        vuelo = cursor.fetchone()
+            """SELECT vuelos.idVuelos, aviones.idAviones, cliente.documentoCliente, cliente.Nombre, 
+vuelos.Origen, vuelos.Destinos, vuelos.Fecha, vuelos.Tickets 
+from vuelos inner join aviones on vuelos.Aviones_idAviones = aviones.idAviones 
+inner join vuelosadscritos on vuelosadscritos.vuelos_idVuelos = vuelos.idVuelos 
+inner join cliente on cliente.documentoCliente = vuelosadscritos.cliente_documentoCliente 
+where cliente.documentoCliente = %s""", (cc,))
+        usuario = cursor.fetchone()
     conexion.close()
-    return vuelo
-
-# -falta
+    return usuario
 
 
-def actualizar_juego(tickets, piloto):
+def comprarTickets(tickets, cc, idVuelo):
     conexion = db.obtener_conexion()
+    # -ejecutar el check de los tickets si no es 0 ejecutar la compra si es 0 devolver tickets agotados y no hacer la compra
     with conexion.cursor() as cursor:
-        cursor.execute("UPDATE juegos SET nombre = %s, descripcion = %s, precio = %s WHERE id = %s",
-                       (tickets, piloto))
+        cursor.execute("""insert into vuelosadscritos
+                        select v.idVuelos,
+                        v.Aviones_idAviones, %s as document, %s as tickets, v.Total * %s as Total
+                        from vuelos v
+                        where v.idVuelos = %s;""",
+                       (cc, tickets, tickets, idVuelo))
     conexion.commit()
     conexion.close()
+
+# Select data - using named placeholders (named style)
+
+
+def comprarTickets2(tickets, cc, idVuelo):
+    sql_ = """insert into vuelosadscritos
+                        select v.idVuelos,
+                        v.Aviones_idAviones, :cc as document, :tickets as tickets, v.Total * :tickets as Total
+                        from vuelos v
+                        where v.idVuelos = :idVuelo;"""
+    par_ = {"cc": cc, "tickets": tickets, "idVuelo": idVuelo}
+    con = db.obtener_conexion()
+    with con.cursor() as cursor:
+        cursor.execute(sql_, par_)
+        con.commit()
+        con.close()
+
+
+def buscar_usuario_por_doc(cc):  # para buscar en login si el usuario existe en la db
+    conexion = db.obtener_conexion()
+    user = None
+    with conexion.cursor() as cursor:
+        cursor.execute(
+            "SELECT documentoCliente, Contraseña FROM cliente where documentoCliente= %s", (cc,))
+        user = cursor.fetchone()
+    conexion.close()
+    return user
+
+
+def obtener_perfil_por_cccc(cc):
+    conexion = db.obtener_conexion()
+    perfil_user = None
+    with conexion.cursor() as cursor:
+        cursor.execute(
+            "SELECT Nombre, Apellido, Edad, Roles_idRoles, documentoCliente, Email FROM cliente WHERE documentoCliente = %s", (cc,))
+        perfil_user = cursor.fetchone()
+    conexion.close()
+    return perfil_user
+
+    # - en el html va algo así
+    #                    <td>
+    #                         <form action="{{url_for('eliminar_juego')}}" method="POST">
+    #                             <input type="hidden" name="id" value="{{juego[0]}}">
+    #                             <button class="button is-danger">Eliminar</button>
+    #                         </form>
+    #                     </td>
+    # - en dbConroller va algo así:
+    # def eliminar_juego(id):
+    # conexion = obtener_conexion()
+    # with conexion.cursor() as cursor:
+    #     cursor.execute("DELETE FROM juegos WHERE id = %s", (id,))
+    # conexion.commit()
+    # conexion.close()
+    # - en allviews va algo así:
+#     @app.route("/eliminar_juego", methods=["POST"])
+# def eliminar_juego():
+#     controlador_juegos.eliminar_juego(request.form["id"])
+#     return redirect("/juegos")

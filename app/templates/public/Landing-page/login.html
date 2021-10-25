@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <form 
+    <div 
         class="form"
         id="form"
         method="GET" 
@@ -24,25 +24,27 @@
                 </div>
                 <h2 class="form__title">Inicio de sesión</h2>
 
+            <form action="{{url_for('login')}}" method="post">
                 <div class="form__group">
-                    <input type="number" class="form__input" id="document" placeholder=" " >
+                    <input  name="CC" type="number" class="form__input" id="document" placeholder=" " >
                     <label for="document" class="form__label">ID Documento:</label>
                     <span class="form__line"></span>
                 </div>
 
                 <div class="form__group">
-                    <input type="password" class="form__input" id="password" placeholder=" " >
+                    <input name="contraseña" type="password" class="form__input" id="password" placeholder=" " >
                     <label for="password" class="form__label">Contraseña:</label>
                     <span class="form__line"></span>
                 </div>
-
                 <button type="submit" class="form__submit">Ingresar</button>
                 <p class="warnings" id="warnings"><strong></strong></p>
                 <p>¿No tienes una cuenta? <a href="/registro">Registrate</a></p>
                 <p >&copy; Jangle Airport</p>
+            </form>
+
             </div>
-        </form>
-        
+        </div>
+       
         <script src="registro.js"></script>
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
