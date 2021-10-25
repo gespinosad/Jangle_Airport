@@ -1,0 +1,189 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    font-size: 16px;
+    --text-primario: hsl(240, 65%, 3%);
+    --transition-speed: 600ms;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 1fr 3fr 1fr;;
+    grid-template-rows: auto auto 1fr auto; /*! */
+    grid-template-areas: 
+        "head head head"
+        "bg bg bg"
+        "lf buscar buscar"
+        "lf cont rgh"
+        "foot foot foot";
+
+        /*
+            "head head head"
+            "bg bg bg"
+            "lf cont cont"
+            "foot foot foot"
+        
+            Esta es la manera para que el contenedor quede desplegado a la dereche
+            básicamente que queden dos columnas en el medio.      
+        */
+
+
+}  
+
+
+
+.buscar{
+    grid-area: buscar;
+    /* background:#fdfcfb; */ /*div no colocar background*/
+    height: 6vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    width: 500px;
+    margin-bottom: 10px;  
+}  
+
+input{
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    box-sizing: border-box;
+    transition: .5s;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 30px;   
+}   
+
+input[type="text"]
+{
+    background: #ffffff;
+    width: 300px;
+    height: 30px;
+    border-radius: 10px 10px 10px 10px;
+    border: 3px solid #f5a967;  
+
+}
+
+input[type="submit"]
+{
+    position: relative;
+    width: 150px;
+    height: 35px;
+    border-radius: 10px 10px 10px 10px;  
+    border: 3px solid #f5a967;
+    background: #f5a967;
+    color: #ffffff;
+    margin-left: 15px;
+
+}
+
+.principal {
+    /* background: radial-gradient(ellipse at center, #3b8aff 40%, #161b3a 100%);  */
+    grid-area: cont;
+    margin-left: 15px;
+    margin-right: 5px;
+    border: 3px solid #f5a967;
+    border-radius: 10px;    
+    display: flex;
+    flex-direction: column;
+    height: 126vh;
+}
+
+.tabla_info_vuelo{  
+    background: rgba(0, 0, 0, 0.493);   
+    height: 126vh;
+    border-collapse: collapse;      
+}
+
+h1{
+    width: 100%;
+    background: rgba(0, 0, 0, 0.493)f;
+    text-align: center;
+    margin-top: 3vh;
+    font-size: 6vh;
+    color: #ffffff;     
+}
+
+.table_info_vuelos{
+    width: 97%;
+    height: 108vh;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-right: 2vh;
+    margin-left: 2vh;
+    text-align:left;
+    border: 6px solid rgb(248, 246, 246);
+    border-collapse: collapse;
+    color: #fff;
+}
+
+tr, td{     
+    padding: 8px;   
+}
+
+tr:nth-child(even){
+    
+    background-color: #f5a967;
+}
+.menuDerecho {
+    /* background: radial-gradient(ellipse at center, #3b8aff 35%, #161b3a 100%); */
+    grid-area: rgh;
+    margin-left: 15px;
+    margin-right: 15px;
+    background: rgba(0, 0, 0, 0.493);
+    border: 3px solid #f5a967;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 126vh;
+}
+
+h3{  
+    width: 96%;
+    background: rgba(0, 0, 0, 0);
+    padding: 8px;
+    font-size: 3vh;
+    color: #ffffff;
+    text-align: center;     
+}
+#num_comentario_vuelo{
+    width: 96%;
+    margin-top: 1px;
+    margin-bottom: 10px;
+    color: #ffffff;
+    
+}
+.tabla_comentarios{
+    width: 96%;
+    height: 78vh;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-right: 2vh;
+    margin-left: 2vh;
+    text-align:left;
+    border: 6px solid #ffffff;
+    border-collapse: collapse;
+    color: #ffffff;
+}
+
+textarea#caja_comentario{
+    min-width: 415px;
+    max-width: 415px;
+    min-height: 70px;
+    max-height: 70px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 3px solid #f5a967;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.377);
+    color: white;    
+}
+
+h4 {
+    text-align: center;
+    font-size: 25px;
+    margin: 6px;
+    margin-bottom: 15px;
+}

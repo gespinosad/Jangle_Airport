@@ -1,0 +1,23 @@
+.menuDerecho{
+    grid-area: rgh;
+    background-color: rgba(0, 0, 0, 0.301) ;
+    border-radius: 10px;
+    border: 3px solid #fff;
+    margin-left: 4px;
+}
+
+.principal {
+    grid-area: cont;
+    display: flex;
+    flex-direction: column;
+}
+
+#table{
+    color: rgb(243, 243, 243);
+    background-color: rgba(59, 66, 78, 0.87);
+
+}
+h3{
+    color: #fff !important;
+    font-weight: bold !important;
+}

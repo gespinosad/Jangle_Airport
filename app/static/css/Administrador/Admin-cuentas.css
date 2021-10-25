@@ -13,7 +13,6 @@ body {
     grid-area: cont;
     padding: 30px 10px 30px 10px;
 }
-
 .filtrar{
     display: flex;
     justify-content: center;
@@ -22,21 +21,21 @@ body {
     margin: auto;
     margin-bottom: 20px;
 }
-.editar {
+.adm-edit-user {
     font-size: 150%;
     border-radius: 20px;
     padding: 15px;   
     border: 3px solid #f5a967; 
     cursor: pointer;
 }
-.agregar {
+.adm-add-user {
     font-size: 150%;
     border-radius: 20px;
     padding: 15px;   
     border: 3px solid #f5a967;
     cursor: pointer; 
 }
-.consultar{
+.adm-delete-user {
     font-size: 150%;
     border-radius: 20px;
     padding: 15px;   
@@ -54,7 +53,7 @@ body {
     border-radius: 10px;
 }
 table{
-
+    margin-top: 10px;
     border-collapse: collapse;
     display: flex;
     justify-content: center;
@@ -64,7 +63,7 @@ th{
     color: #f1efef;
 }
 td {
-    color: #f1efef;
+    color: #fff;
 }
 td, th{
     padding-left: 30px;
@@ -113,7 +112,7 @@ input:checked +.slider:before{
     display: flex;
     justify-content: center;
 }
-.adm-save-chVuelos{
+.adm-save-chUsers{
     background-color: grey;
     width: 30%;
     padding: 25px;   

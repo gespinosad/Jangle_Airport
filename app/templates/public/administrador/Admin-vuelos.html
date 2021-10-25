@@ -1,8 +1,8 @@
 {% extends "public/plantilla/plantilla.html" %}
-{% block title %}Agregar Vuelos{% endblock %}
+{% block title %}Administrar Vuelos{% endblock %}
 
 {% block link %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/Administrador/Agregar-vuelos.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Administrador/Admin-vuelos.css') }}">
 {% endblock %}
 
 {% block Menunav%} 
@@ -10,29 +10,23 @@
     <li><a href="/admin/admin_cuentas">Cuentas</a></li>
 {% endblock %}
 
-
-
-
-{% block Centro %} 
+{% block Centro %}
     <div class="principal">
+        <section class="filtrar">
+            <input class="editar" type="submit" name="editar-vuelos" value="Editar"></input>
+            <form action="/admin/agregar_vuelos">
+                <input class="agregar" type="submit" name="agregar-vuelos" value="Agregar">
+            </form>
+            <input class="consultar" type="submit" name="consultar-vuelos" value="Consultar">
+        </section>
+
         <section class="tabla">
-            <h1>AGREGAR VUELOS</h1>
-                <div class="adm-addFly">
-                    <section class="opc-agregar-vuelos">
-                        <input type="datetime-local" class="adm-fechayhora">
-                        <input type="text" class="adm-origen" placeholder="Origen">
-                        <input type="text" class="adm-destino" placeholder="Destino">
-                        <input type="text" class="adm-idAvion" placeholder="ID Avion">
-                        <input type="text" class="adm-codVuelo" placeholder="Cod. Vuelo">
-                        <input type="text" class="adm-status" placeholder="Status">
-                    </section>
-                    <section class="secEditar">
-                        <input type="submit" class="adm-agregar-datos">
-                    </section>
-                </div>
-                
+
+            <h1>VUELOS</h1>
+            
             <table>
                 <tr>
+                    <th>Selección</th>
                     <th>Fecha</th>
                     <th>Hora Salida</th>
                     <th>Tiempo de Vuelo</th>
@@ -41,9 +35,11 @@
                     <th>ID Avión</th>
                     <th>Cod. Vuelo</th>
                     <th>Status</th>
-                    
                 </tr>
                 <tr>
+                    <td><label class="switch"><input type="checkbox" name="switch">
+                        <span class="slider"></span></label>
+                    </td>
                     <td>Fecha</td>
                     <td>Hora Salida</td>
                     <td>Tiempo de Vuelo</td>
@@ -54,6 +50,9 @@
                     <td>Status</td>
                 </tr>
                 <tr>
+                    <td><label class="switch"><input type="checkbox" name="switch">
+                        <span class="slider"></span></label>
+                    </td>
                     <td>Fecha</td>
                     <td>Hora Salida</td>
                     <td>Tiempo de Vuelo</td>
@@ -64,6 +63,9 @@
                     <td>Status</td>
                 </tr>
                 <tr>
+                    <td><label class="switch"><input type="checkbox" name="switch">
+                        <span class="slider"></span></label>
+                    </td>
                     <td>Fecha</td>
                     <td>Hora Salida</td>
                     <td>Tiempo de Vuelo</td>
@@ -74,6 +76,9 @@
                     <td>Status</td>
                 </tr>
                 <tr>
+                    <td><label class="switch"><input type="checkbox" name="switch">
+                        <span class="slider"></span></label>
+                    </td>
                     <td>Fecha</td>
                     <td>Hora Salida</td>
                     <td>Tiempo de Vuelo</td>
@@ -84,7 +89,9 @@
                     <td>Status</td>
                 </tr>
             </table>
-
+            <div class="divbutton">
+                <input type="button" class="adm-save-chVuelos" value="Guardar Cambios">
+            </div>
         </section>
     </div>
 {% endblock %}

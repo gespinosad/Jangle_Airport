@@ -1,0 +1,154 @@
+body { 
+    font-family: Arial, Helvetica, sans-serif;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas: 
+        "head head head"
+        "bg bg bg"
+        "lf cont cont"
+        "foot foot foot";
+}
+.principal {
+    grid-area: cont;
+    padding: 30px 10px 30px 10px;
+    margin-left: 20px;
+    margin-right: 15%;
+    display: flex;
+    flex-direction: column;
+}
+.tabla{
+    /* list-style: none; */
+    padding:20px;
+    width: 90%;
+    margin:auto;
+    margin-top: 20px;
+    margin-right: 15%;
+    border-radius: 10px;
+    border: 3px solid #fff;
+    
+    background-color: rgba(0, 0, 0, 0.301) ;
+}
+.opc-agregar-cuentas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:10px; 
+    width: fit-content;
+    margin: auto;
+}
+.adm-idUsuario {
+    width: auto;
+    border-radius: 10px;
+    padding: 5px;   
+    border: 3px solid #f5a967; 
+}
+.adm-nombre {
+    width: auto;
+    border-radius: 10px;
+    padding: 5px;   
+    border: 3px solid #f5a967; 
+}
+.adm-apellido {
+    width: auto;
+    border-radius: 10px;
+    padding: 5px;   
+    border: 3px solid #f5a967; 
+}
+.adm-idDocumento {
+    width: auto;
+    border-radius: 10px;
+    padding: 5px;   
+    border: 3px solid #f5a967; 
+}
+.adm-edad {
+    width: auto;
+    border-radius: 10px;
+    padding: 5px;   
+    border: 3px solid #f5a967; 
+}
+.adm-email {
+    width: auto;
+    border-radius: 10px;
+    padding: 5px;   
+    border: 3px solid #f5a967; 
+}
+.adm-contraseña {
+    width: auto;
+    border-radius: 10px;
+    padding: 5px;   
+    border: 3px solid #f5a967; 
+}
+.secAgregar {
+    display: flex;
+    justify-content: center;
+    gap:20px; 
+    width: fit-content;
+    margin: auto;
+    padding: 15px;
+    border-radius: 13px;
+}
+.adm-agregar {
+    background-color: rgb(135, 135, 135);
+    font-size: 150%;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 3px solid #f5a967;
+    cursor: pointer; 
+    height: 60px;
+    text-align: center;
+}
+/* table{
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+} */
+/* Ajustes a tabla, cabecera fija con scroll en el tbody */
+table{
+    border-collapse: collapse;
+    border: 5px solid #fff;
+}
+.tabla_info{
+    justify-content: center;
+    width: fit-content;
+    margin: auto;
+}
+table tbody::-webkit-scrollbar{
+    width: 0px;
+}
+table tbody {
+    height: 30vh;
+    overflow-y: auto;
+    width: 100%;
+}
+table thead,
+table tbody,
+table td,
+table th {
+    display: block;
+}
+table tbody td,
+table thead > tr > th {
+    float: left;
+    border-bottom-width: 0;
+}
+/* Ajustes a tabla, cabecera fija con scroll en el tbody */
+th{
+    background: #080808;
+}
+td, th{
+    color: #fff;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 15px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+h4 {
+    text-align: center;
+    font-size: 25px;
+    margin: 6px;
+    margin-bottom: 25px;
+}

@@ -1,10 +1,15 @@
-{% extends "/public/templates/public_template.html" %}
+{% extends "public/usuarios/skeleton.html" %}
+{% block link %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/skeleton.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navBar.css') }}">
+{% endblock %}
+
 {% block title %}sign up{% endblock %}
-{% block main %}
+<!-- {% block main %} -->
 <!-- <h1>Sign Up</h1>
 <hr />
 <!---in flask we need to create a name atribute for forms-->
-<form action="/sign_up" method="post">
+<!-- <form action="/sign_up" method="post">
     <div class="form-group">
         <label>Username</label>
         <input type="text" class="form-control" name="username" />
@@ -20,14 +25,15 @@
         <input type="password" class="form-control" name="password" />
     </div>
     <button type="submit" class="btn btn-primary">Sign up</button>
-</form>
+</form> -->
 
-{% endblock %}
+<!-- {% endblock %} --> -->
 
-<!-- {% block content %}
+{% block body %}
 {% if name %}
         <h1>Hello {{name}}</h1>
 {% else %}
+<div class="principal">
     <h1>Cuál es tu nombre?</h1>
     <hr>
     <form action="POST">
@@ -36,8 +42,11 @@
         {{form.name.label(class="form-label")}}
         {{form.name(class="form-control")}}
         <br>
+        {{form.email.label(class="form-label")}}
+        {{form.email(class="form-control")}}
         {{form.submit(class="btn btn-primary")}}
     </form>
-{% endif %}
+</div>
+    {% endif %}
 
-{% endblock %} -->
+{% endblock %}

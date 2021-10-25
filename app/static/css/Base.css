@@ -1,3 +1,5 @@
+/*Contiene:  logos, footer, header(grid-area=head)
+            carrucel bh(grid-area=bg)*/
 * {
     margin: 0%;
     padding: 0%;
@@ -5,90 +7,50 @@
     --text-primario: hsl(240, 65%, 3%);
     --transition-speed: 600ms;
 }
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: radial-gradient(ellipse at center, rgb(32, 121, 255) 20%, #030617 100%);
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr minmax(5vw,auto) min-content;
-    grid-template-rows: 1fr 8fr 1fr;
-    grid-template-areas: 
-        "head head head"
-        "lf cont rgh"
-        "foot foot foot";
-}
-
-.header {
+header {
     grid-area: head;
     background-color: black;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border: 3px solid #f5a967;
     border-radius: 10px;
+    height: 100%;
 }
-
-.principal {
-    margin: auto;
-    grid-area: cont;
-    background: radial-gradient(ellipse at center, #2079ff 40%, #030617 100%);
-    border: 3px solid #f5a967;
-    border-radius: 10px;    
+body{
+    background-image: url("/static/img/flying-airplane.jpg");
+    /* background-image: url("/app/static/img/flying-airplane.jpg"); */
+    background-size: 200vh; /* Agregar fondo con imagen*/
+    background-size: cover;
+    background-position-x: center;
+    min-height: 100vh;
 }
-.menuDerecho {
-    grid-area: rgh;
-    color: white;
-    background: radial-gradient(ellipse at center, #2079ff 20%, #030617 100%);
-    border: 3px solid #f5a967;
-    border-radius: 10px;  
+.bg{
+    grid-area: bg;
 }
-.menuDerecho h2{
-    display: flex;
-    justify-content: center;
-}
-.sidebar {
-    display: flex;
-    align-self: center; 
-    flex-direction: column;
-    justify-content: space-evenly; 
-    color: white;
-    /* background-color: aqua; */
-    height: fit-content;
-    gap: 15vh;
-}
-
-.imgDestinos{
-    text-align: center;
-    justify-items: auto;
-    width: auto;
-    
+.bg .mw-100 {
+    width: 100%;
 }
 .logo1 img{
-    width: 130px;
-    height: 150px;
+    width: 110px;
+    height: 95px;
     margin: auto;   
     display: block; 
     float: left;
 }
-
 .logo2 img{
-    width:300px;
-    height: 150px;
+    width:220px;
+    height: 97px;
     margin: auto;   
     display: block;
     float: center;
 }
-
 .logo3 img{
-    width: 130px;
-    height: 150px;
+    width: 110px;
+    height: 95px;
     margin: auto;   
     display: block;
     float: right;
 }
-
 .logo4 img{
     width: 130px;
-    height: 115px;
+    height: 105px;
     margin: auto;   
     display: block; 
     float: left;
@@ -96,108 +58,34 @@ body {
     padding-right: 20px;
 }
 
-.nav {
-    grid-area: lf;
-}
-
-.filtrar{
-    display: flex;
-    justify-content: center;
-    gap:10px; 
-    background-color: #000;
-    width: fit-content;
-    margin: auto;
-    padding: 15px;
-    border-radius: 13px;
-}
-
-.datos{
-    border-radius: 10px;
-    border: 3px solid #f5a967;
-}
-
-.consulta{
-    border-radius: 10px;
-    padding: 15px;   
-    border: 3px solid #f5a967; 
-}
 
 h1{
     text-align: center;
+    padding: 15px;
+    color: white;
+}
+b,
+strong {
+ font-weight:bolder;
+ font-size: revert;
 }
 
-th{
-    background: #080808;
-    color: #f1efef;
-    
-}
-.tabla{
-    background: #f1efef;
-    list-style: none;
-    width: fit-content;
-    margin:auto;
-    margin-top: 20px;
-    border-radius: 10px;
-    border: 3px solid #f5a967;
-    overflow: scroll;
-}
-
-table{
-    margin-top: 10px;
-    border-collapse: collapse;
-}
-
-td, th{
-    border: 3px solid #f5a967;
-    padding: 2vw;
+h2{
     text-align: center;
-}
-
-.seleccion {
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 15px;
-    padding-bottom: 20px;
-    text-align: center;
-}
-
-.reserva{
-    width: 100%;
-    padding: 25px;   
-    border: 3px solid #f5a967;
-    border-radius: 100px;
-    margin-left: center;
-    margin-right: center;
-    font-size: 20px;  
-}
-
-.buttonComprar {
-    list-style: none;
-    padding: 0%;
-    width: 900px;
-    margin:auto;
-    margin-top: 15px;
+    color: white;
 }
 
 footer {
     grid-area: foot;
-    background: #000;
+    background: rgba(0, 0, 0, 0.63);
     color: #fff;
     border: 3px solid #f5a967;
     border-radius: 20px;
     margin-top: 30px;
-    font-size: 20px;  
-    text-align: center;
+    /*! margin-bottom: -20px; */
+    /*! font-size: 20px; */  
+    /*! text-align: center; */
 }
-
-h4 {
+p {
     text-align: center;
-    font-size: 25px;
-    margin: 6px;
-    margin-bottom: 15px;
-}
-
-ion-icon {
-    font-size: 100px;
-    color: white;
 }

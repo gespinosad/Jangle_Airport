@@ -1,0 +1,100 @@
+{% extends "public/plantilla/plantilla.html" %}
+{% block title %}Mis vuelos usuario{% endblock %}
+
+
+{% block link %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/Usuario/Usuario_mis_vuelos.css') }}">
+{% endblock %}
+
+
+
+{% block Menunav%}
+    <li><a href="/home-user">Home</a></li>  
+    <li><a href="/mi-perfil-usuario">Mi Perfil</a></li>         
+    <li><a href="/mis-vuelos-usuario">Mis Vuelos</a></li>
+{% endblock %}
+    
+
+    <div class="buscar">
+        <form>
+            <input type="text" name="" placeholder="Codigo Vuelo">
+            <input type="submit" name="" value="Buscar">
+        </form>
+
+    </div>
+
+{% block Centro %} 
+    <div class="principal"> 
+       
+            <h1>Información Vuelo</h1>
+            <table id="table">
+                <tr>
+                    <th>Usuario :</th>
+                    <td>{{miVuelo[3]}}</td>
+                    <th>Documento: </th>
+                    <td>{{miVuelo[2]}}</td>
+                </tr>
+                <tr>
+                    <th>Origen :</th>
+                    <td>{{miVuelo[4]}}</td>
+                    <th>Destino: </th>
+                    <td>{{miVuelo[5]}}</td>
+                </tr>
+                <tr>
+                    <th>Fecha :</th>
+                    <td>{{miVuelo[6]}}</td>
+                    <th>Tickets: </th>
+                    <td>{{miVuelo[7]}}</td>
+                </tr>
+                <tr>
+                    <th>Vuelo id: </th>
+                    <td>{{miVuelo[0]}}</td>
+                    <th>Avion: </th>
+                    <td>{{miVuelo[1]}}</td>
+                </tr>
+            </table>  
+     
+    </div>
+{% endblock %}
+
+    {% block menuDerecho %}
+    <div class="menuDerecho">
+        
+        <div class="comentario">
+            <h1>Comentarios</h1>
+            <h3>vuelo</h3>
+            <p name="cod_vuelo" id="num_comentario_vuelo">######</p>
+            <form class="area_comentario">
+                <textarea name="comentario" id="caja_comentario" placeholder="Ingresa Comentario"></textarea>
+                <input class="boton_comentario" type="submit" name="" value="Comentar">
+                <input class="boton_cancelar" type="submit" name="" value="Cancelar"> 
+            </form>
+
+            <section>
+                <table class="tabla_comentarios">
+                    <tr>
+                        <td>usuario1</td>
+                    </tr>
+                    <tr>
+                        <td>comentario</td>
+                    </tr>
+                    <tr>
+                        <td>usuario2</td>
+                    </tr>
+                    <tr>
+                        <td>comentario</td>
+                    </tr>
+                    <tr>
+                        <td>usuairo3</td>
+                    </tr>
+                    <tr>
+                        <td>comentario</td>
+                    </tr>
+
+                </table>
+
+            </section>
+    
+        </div>
+    </div>
+    {% endblock %}

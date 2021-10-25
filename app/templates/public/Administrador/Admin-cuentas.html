@@ -1,0 +1,87 @@
+{% extends "public/plantilla/plantilla.html" %}
+{% block title %}Administrar Cuentas{% endblock %}
+
+{% block link %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Administrador/Admin-cuentas.css') }}">
+{% endblock %}
+
+{% block Menunav%} 
+    <li><a href="/admin/admin_vuelos">Vuelos</a></li>
+    <li><a href="/admin/admin_cuentas">Cuentas</a></li>
+{% endblock %}
+
+{% block Centro %}
+    <div class="principal">
+        <section class="filtrar">
+            <input class="adm-edit-user" type="submit" name="editar-vuelos" value="Editar"></input>
+
+            <form action="/admin/agregar_cuentas">
+                <input class="adm-add-user" type="submit" name="agregar-vuelos" value="Agregar"></input>
+            </form>
+            
+            <input class="adm-delete-user" type="submit" name="eliminar-usuario" value="Eliminar"></input>
+        </section>
+
+        <section class="tabla">
+            <h1>CUENTAS</h1>
+            <table>
+                <tr>
+                    <th class="seleccion">Selección</th>
+                    <th>Rol</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>ID Documento</th>
+                    <th>Edad</th>
+                    <th>Email</th>
+                </tr>
+                <tr>
+                    <td><label class="switch"><input type="checkbox" name="switch">
+                        <span class="slider"></span></label>
+                    </td>
+                    <td>1 (Usuario)</td>
+                    <td>Nombre</td>
+                    <td>Apellido</td>
+                    <td>ID Documento</td>
+                    <td>Edad</td>
+                    <td>Email</td>
+                </tr>
+                <tr>
+                    <td><label class="switch"><input type="checkbox" name="switch">
+                        <span class="slider"></span></label>
+                    </td>
+                    <td>1 (Usuario)</td>
+                    <td>Nombre</td>
+                    <td>Apellido</td>
+                    <td>ID Documento</td>
+                    <td>Edad</td>
+                    <td>Email</td>
+                </tr>
+                <tr>
+                    <td><label class="switch"><input type="checkbox" name="switch">
+                        <span class="slider"></span></label>
+                    </td>
+                    <td>2 (Piloto)</td>
+                    <td>Nombre</td>
+                    <td>Apellido</td>
+                    <td>ID Documento</td>
+                    <td>Edad</td>
+                    <td>Email</td>
+                </tr>
+                <tr>
+                    <td><label class="switch"><input type="checkbox" name="switch">
+                        <span class="slider"></span></label>
+                    </td>
+                    <td>3 (Administrador)</td>
+                    <td>Nombre</td>
+                    <td>Apellido</td>
+                    <td>ID Documento</td>
+                    <td>Edad</td>
+                    <td>Email</td>
+                </tr>
+            </table>
+            <div class="divbutton">
+                <input type="button" class="adm-save-chUsers" value="Guardar Cambios">
+            </div>
+        </section>
+    </div>
+{% endblock %}
