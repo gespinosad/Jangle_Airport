@@ -53,7 +53,7 @@ def antes_de_cada_peticion():
     ruta = request.path
     print("imprimiendo ruta: ", ruta)
     # Si no ha iniciado sesión y no quiere ir a algo relacionado al login, lo redireccionamos al login
-    if not 'usuario' in session and ruta != "/login" and not ruta.startswith("/static"):
+    if not 'usuario' in session and ruta != "/login" and ruta != "/registro" and not ruta.startswith("/static"):
         return redirect("/login")
         # flash("Inicia sesión para continuar")
     # Si ya ha iniciado, no hacemos nada, es decir lo dejamos pasar

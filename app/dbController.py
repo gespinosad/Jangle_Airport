@@ -38,11 +38,10 @@ where cliente.documentoCliente = %s""", (cc,))
     conexion.close()
     return usuario
 
-# -falta
-
 
 def comprarTickets(tickets, cc, idVuelo):
     conexion = db.obtener_conexion()
+    # -ejecutar el check de los tickets si no es 0 ejecutar la compra si es 0 devolver tickets agotados y no hacer la compra
     with conexion.cursor() as cursor:
         cursor.execute("""insert into vuelosadscritos
                         select v.idVuelos,
@@ -56,18 +55,18 @@ def comprarTickets(tickets, cc, idVuelo):
 # Select data - using named placeholders (named style)
 
 
-# def hacer_compra2(tickets, cc, idVuelo):
-#     sql_ = """insert into vuelosadscritos
-#                         select v.idVuelos,
-#                         v.Aviones_idAviones, :cc as document, :tickets as tickets, v.Total * :tickets as Total
-#                         from vuelos v
-#                         where v.idVuelos = :idVuelo;"""
-#     par_ = {"cc": cc, "tickets": tickets, "idVuelo": idVuelo}
-#     con = db.obtener_conexion()
-#     with con.cursor() as cursor:
-#         cursor.execute(sql_, par_)
-#         con.commit()
-#         con.close()
+def comprarTickets2(tickets, cc, idVuelo):
+    sql_ = """insert into vuelosadscritos
+                        select v.idVuelos,
+                        v.Aviones_idAviones, :cc as document, :tickets as tickets, v.Total * :tickets as Total
+                        from vuelos v
+                        where v.idVuelos = :idVuelo;"""
+    par_ = {"cc": cc, "tickets": tickets, "idVuelo": idVuelo}
+    con = db.obtener_conexion()
+    with con.cursor() as cursor:
+        cursor.execute(sql_, par_)
+        con.commit()
+        con.close()
 
 
 def buscar_usuario_por_doc(cc):  # para buscar en login si el usuario existe en la db
@@ -90,35 +89,6 @@ def obtener_perfil_por_cccc(cc):
         perfil_user = cursor.fetchone()
     conexion.close()
     return perfil_user
-
-
-def hacer_CompraAD(tickets, cc, idVuelo):
-    conexion = db.obtener_conexion()
-    with conexion.cursor() as cursor:
-        cursor.execute("""insert into vuelosadscritos
-                        select v.idVuelos,
-                        v.Aviones_idAviones, %s as document, %s as tickets, v.Total * %s as Total
-                        from vuelos v
-                        where v.idVuelos = %s;""",
-                       (cc, tickets, tickets, idVuelo))
-    conexion.commit()
-    conexion.close()
-
-# Select data - using named placeholders (named style)
-
-
-def hacer_compra2AD(tickets, cc, idVuelo):
-    sql_ = """insert into vuelosadscritos
-                        select v.idVuelos,
-                        v.Aviones_idAviones, :cc as document, :tickets as tickets, v.Total * :tickets as Total
-                        from vuelos v
-                        where v.idVuelos = :idVuelo;"""
-    par_ = {"cc": cc, "tickets": tickets, "idVuelo": idVuelo}
-    con = db.obtener_conexion()
-    with con.cursor() as cursor:
-        cursor.execute(sql_, par_)
-        con.commit()
-        con.close()
 
     # - en el html va algo así
     #                    <td>
