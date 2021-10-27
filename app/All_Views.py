@@ -128,5 +128,6 @@ def piloto_mi_perfil():
 @ app.route("/mis-vuelos-piloto")
 def piloto_mis_vuelos():
     if session["account"] == 3:
+        vuelos = dbController.obtener_vuelos_piloto()
         return render_template("/public/Piloto/mis-vuelos.html")
     return redirect(url_for("logout"))

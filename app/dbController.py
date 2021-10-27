@@ -108,6 +108,25 @@ def agregar_usuario(documento_usuario, nombre, contraseña, roles, apellido, eda
     conexion.commit()
     conexion.close()
 
+def obtener_perfil_piloto_por_cc(cc):
+    conexion = db.obtener_conexion()
+    perfil_piloto = None
+    with conexion.cursor() as cursor:
+        cursor.execute(
+            "SELECT Nombre, Apellido, Edad, Roles_idRoles, documentoPiloto, Email, Contraseña FROM piloto WHERE documentoPiloto = %s", (cc,))
+        perfil_piloto = cursor.fetchone()
+    return perfil_piloto
+
+
+def obtener_vuelos_piloto():
+    conexion = db.obtener_conexion()
+    vuelos = []
+    with conexion.cursor() as cursor:
+        cursor.execute("""SELECT vuelos.Fecha, vuelos.Origen, vuelos.Destinos, aviones.idAviones, vuelos.idVuelos from vuelos inner join aviones on vuelos.Aviones_idAviones = aviones.idAviones limit 10""")
+        vuelos = cursor.fetchall()
+    conexion.close()
+    return vuelos
+
     # - en el html va algo así
     #                    <td>
     #                         <form action="{{url_for('eliminar_juego')}}" method="POST">

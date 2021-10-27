@@ -30,86 +30,29 @@
         <section class="tabla">
             <table>
                 <tr>
-                    <th>Fecha</th>
-                    <th>Hora salida</th>
-                    <th>Tiempo de vuelo</th>
-                    <th>Origen</th>
-                    <th>Destino</th>
-                    <th>Id avión</th>
-                    <th>Cod vuelo</th>
-                    <th>Status</th>
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Origen</th>
+                            <th>Destino</th>
+                            <th>Id avión</th>
+                            <th>Cod vuelo</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for vuelo in vuelos %}
+                            <tr>
+                                <td>{{vuelo[0]}}</td>
+                                <td>{{vuelo[1]}}</td>
+                                <td>{{vuelo[2]}}</td>
+                                <td>{{vuelo[3]}}</td>
+                                <td>{{vuelo[4]}}</td>
+                                <td>{{vuelo[5]}}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
 
-                </tr>
-                <tr>
-                    <td>Fecha</th>
-                    <td>Hora salida</th>
-                    <td>Tiempo de vuelo</th>
-                    <td>Origen</td>
-                    <td>Destino</td>
-                    <td>Id avión</td>
-                    <td>Cod vuelo</td>
-                    <td>Status</td>
-                </tr>
-                <tr>
-                    <td>Fecha</td>
-                    <td>Hora salida</td>
-                    <td>Tiempo de vuelo</td>
-                    <td>Origen</td>
-                    <td>Destino</td>
-                    <td>Id avión</td>
-                    <td>Cod vuelo</td>
-                    <td>Status</td>
-                </tr>
-                <tr>
-                    <td>Fecha</td>
-                    <td>Hora salida</td>
-                    <td>Tiempo de vuelo</td>
-                    <td>Origen</td>
-                    <td>Destino</td>
-                    <td>Id avión</td>
-                    <td>Cod vuelo</td>
-                    <td>Status</td>
-                </tr>
-                <tr>
-                    <td>Fecha</td>
-                    <td>Hora salida</td>
-                    <td>Tiempo de vuelo</td>
-                    <td>Origen</td>
-                    <td>Destino</td>
-                    <td>Id avión</td>
-                    <td>Cod vuelo</td>
-                    <td>Status</td>
-                </tr>
-                <tr>
-                    <td>Fecha</td>
-                    <td>Hora salida</td>
-                    <td>Tiempo de vuelo</td>
-                    <td>Origen</td>
-                    <td>Destino</td>
-                    <td>Id avión</td>
-                    <td>Cod vuelo</td>
-                    <td>Status</td>
-                </tr>
-                <tr>
-                    <td>Fecha</td>
-                    <td>Hora salida</td>
-                    <td>Tiempo de vuelo</td>
-                    <td>Origen</td>
-                    <td>Destino</td>
-                    <td>Id avión</td>
-                    <td>Cod vuelo</td>
-                    <td>Status</td>
-                </tr>
-                <tr>
-                    <td>Fecha</td>
-                    <td>Hora salida</td>
-                    <td>Tiempo de vuelo</td>
-                    <td>Origen</td>
-                    <td>Destino</td>
-                    <td>Id avión</td>
-                    <td>Cod vuelo</td>
-                    <td>Status</td>
-                </tr>
     
 
             </table>
