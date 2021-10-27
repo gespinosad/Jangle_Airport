@@ -108,6 +108,7 @@ def agregar_usuario(documento_usuario, nombre, contraseña, roles, apellido, eda
     conexion.commit()
     conexion.close()
 
+
 def obtener_perfil_piloto_por_cc(cc):
     conexion = db.obtener_conexion()
     perfil_piloto = None
@@ -115,6 +116,7 @@ def obtener_perfil_piloto_por_cc(cc):
         cursor.execute(
             "SELECT Nombre, Apellido, Edad, Roles_idRoles, documentoPiloto, Email, Contraseña FROM piloto WHERE documentoPiloto = %s", (cc,))
         perfil_piloto = cursor.fetchone()
+    conexion.close()
     return perfil_piloto
 
 

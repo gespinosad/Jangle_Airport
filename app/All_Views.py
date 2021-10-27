@@ -121,6 +121,7 @@ def homeUser():
 @ app.route("/mi-perfil-piloto")
 def piloto_mi_perfil():
     if session["account"] == 3:
+        perfil_piloto = dbController.obtener_perfil_piloto_por_cc(100000)
         return render_template("/public/Piloto/mi-perfil.html")
     return redirect(url_for("logout"))
 
