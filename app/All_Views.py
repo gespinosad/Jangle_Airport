@@ -41,10 +41,19 @@ def login():
     return render_template("public/Landing-page/login.html")
 
 
-@app.route("/registro")  # esto es el link que ponemos en el menú para cambiar de pagina
-def registro():
+@app.route("/registro")
+def nuevo_registro():
     #! hashed_pswd = pbkdf2_sha256.hash(contraseña)  hashear contraseña
-    return render_template("public/Landing-page/registro.html")
+    nombre = request.form["nombre"]
+    apellido = request.form["apellido"]
+    documento_usuario = request.form["documento_usuario"]
+    edad = request.form["edad"]
+    email = request.form["email"]
+    contraseña = request.form["contraseña"]
+    roles= 2
+    dbController.agregar_usuario(documento_usuario, nombre, contraseña, roles, apellido, edad, email)
+    return redirect("/login")
+    
 
 # Cerrar sesión
 
@@ -121,16 +130,5 @@ def piloto_mis_vuelos():
         return render_template("/public/Piloto/mis-vuelos.html")
     return redirect(url_for("logout"))
 
-@app.route("/registro")
-def nuevo_registro():
-    nombre = request.form["nombre"]
-    apellido = request.form["apellido"]
-    documento_usuario = request.form["documento_usuario"]
-    edad = request.form["edad"]
-    email = request.form["email"]
-    contraseña = request.form["contraseña"]
-    roles= 2
-    dbController.agregar_usuario(documento_usuario, nombre, contraseña, roles, apellido, edad, email)
-    return redirect("/login")
-    
+
 
