@@ -99,11 +99,12 @@ def obtener_perfil_por_cccc(cc):
     conexion.close()
     return perfil_user
 
+
 def agregar_usuario(documento_usuario, nombre, contraseña, roles, apellido, edad, email):
     conexion = db.obtener_conexion()
     with conexion.cursor() as cursor:
         cursor.execute("INSERT INTO cliente(documentoCliente, Nombre, Contraseña, Roles_idRoles, Apellido, Edad, Email) VALUES (%s, %s, %s, %s, %s, %s, %s)",
-                       (documento_usuario, nombre, contraseña, roles, apellido, edad, email))
+                       (documento_usuario, nombre, contraseña, roles, apellido, edad, email,))
     conexion.commit()
     conexion.close()
 

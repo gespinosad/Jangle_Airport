@@ -12,12 +12,9 @@
     <form 
         class="form"
         id="form"
-        method="GET" 
-        action="{{url_for('nuevo_registro')}}" method="post"
+        action="{{url_for('hacerRegistro')}}" method="POST"
         name="formRegistro"
         >
-
-            <div class="form__container">
                 <div class="form__group">
                     <img src="/static/img/airplane_register.jpg"
                     alt="" width="72" height="57">
@@ -70,7 +67,7 @@
                 <p class="warnings" id="warnings"><strong></strong></p>
                 <p>¿Ya tienes una cuenta? <a href="/">Ingresa</a></p>
                 <p >&copy; Jangle Airport</p>
-            </div>
+       
         </form>
 
     <script src="/public/Landing-page/registro.js"></script>
