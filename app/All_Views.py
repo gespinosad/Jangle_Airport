@@ -104,3 +104,17 @@ def piloto_mi_perfil():
 @app.route("/mis-vuelos-piloto")
 def piloto_mis_vuelos():
     return render_template("/public/Piloto/mis-vuelos.html")
+
+@app.route("/registro")
+def nuevo_registro():
+    nombre = request.form["nombre"]
+    apellido = request.form["apellido"]
+    documento_usuario = request.form["documento_usuario"]
+    edad = request.form["edad"]
+    email = request.form["email"]
+    contraseña = request.form["contraseña"]
+    roles= 2
+    dbController.agregar_usuario(documento_usuario, nombre, contraseña, roles, apellido, edad, email)
+    return redirect("/login")
+    
+
