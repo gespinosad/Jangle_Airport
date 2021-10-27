@@ -98,9 +98,11 @@ def homeUser():
 
 @app.route("/mi-perfil-piloto")
 def piloto_mi_perfil():
-    return render_template("/public/Piloto/mi-perfil.html")
+    perfil_piloto = dbController.obtener_perfil_piloto_por_cc(100000)
+    return render_template("/public/Piloto/mi-perfil.html", perfil_piloto=perfil_piloto)
 
 
 @app.route("/mis-vuelos-piloto")
 def piloto_mis_vuelos():
-    return render_template("/public/Piloto/mis-vuelos.html")
+    vuelos = dbController.obtener_vuelos_piloto()
+    return render_template("/public/Piloto/mis-vuelos.html", vuelos = vuelos)
