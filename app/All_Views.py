@@ -41,14 +41,11 @@ def login():
     return render_template("public/Landing-page/login.html")
 
 
-@app.route("/registro")
+@app.route("/registro", methods=["POST", "GET"])
 def nuevo_registro():
     #! hashed_pswd = pbkdf2_sha256.hash(contraseña)  hashear contraseña
-    return render_template("public/Landing-page/registro.html")
-
-
-@app.route("/registro", methods=["POST"])
-def hacerRegistro():
+    if request.method == "GET":
+        return render_template("public/Landing-page/registro.html")
     if request.method == "POST":
         nombre = request.form.get("nombre")
         apellido = request.form.get("apellido")
@@ -59,6 +56,7 @@ def hacerRegistro():
         roles = 2
         dbController.agregar_usuario(documento_usuario, nombre, contraseña, roles, apellido, edad, email)
         return redirect("/login")
+
 # Cerrar sesión
 
 
