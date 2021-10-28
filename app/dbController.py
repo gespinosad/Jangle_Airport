@@ -1,4 +1,5 @@
 from app import db
+import pymysql
 
 
 def obtener_vuelos():
@@ -69,15 +70,23 @@ def comprarTickets2(tickets, cc, idVuelo):
         con.close()
 
 
-def buscar_usuario_por_doc(cc):  # para buscar en login si el usuario existe en la db
+def searchAccount(cc):
     conexion = db.obtener_conexion()
-    user = None
+    usuario = None
     with conexion.cursor() as cursor:
         cursor.execute(
-            "SELECT documentoCliente, Contraseña FROM cliente where documentoCliente= %s", (cc,))
-        user = cursor.fetchone()
+            """
+                select documentoAdministrador,Contraseña, Roles_idRoles from administrador
+                where documentoAdministrador = %s
+                union
+                select documentoCliente,Contraseña, Roles_idRoles from cliente
+                where documentoCliente = %s
+                union
+                select documentoPiloto,Contraseña, Roles_idRoles from piloto
+                where documentoPiloto = %s""", (cc, cc, cc,))
+    usuario = cursor.fetchone()
     conexion.close()
-    return user
+    return usuario
 
 
 def obtener_perfil_por_cccc(cc):
@@ -89,6 +98,36 @@ def obtener_perfil_por_cccc(cc):
         perfil_user = cursor.fetchone()
     conexion.close()
     return perfil_user
+
+
+def agregar_usuario(documento_usuario, nombre, contraseña, roles, apellido, edad, email):
+    conexion = db.obtener_conexion()
+    with conexion.cursor() as cursor:
+        cursor.execute("INSERT INTO cliente(documentoCliente, Nombre, Contraseña, Roles_idRoles, Apellido, Edad, Email) VALUES (%s, %s, %s, %s, %s, %s, %s)",
+                       (documento_usuario, nombre, contraseña, roles, apellido, edad, email,))
+    conexion.commit()
+    conexion.close()
+
+
+def obtener_perfil_piloto_por_cc(cc):
+    conexion = db.obtener_conexion()
+    perfil_piloto = None
+    with conexion.cursor() as cursor:
+        cursor.execute(
+            "SELECT Nombre, Apellido, Edad, Roles_idRoles, documentoPiloto, Email, Contraseña FROM piloto WHERE documentoPiloto = %s", (cc,))
+        perfil_piloto = cursor.fetchone()
+    conexion.close()
+    return perfil_piloto
+
+
+def obtener_vuelos_piloto():
+    conexion = db.obtener_conexion()
+    vuelos = []
+    with conexion.cursor() as cursor:
+        cursor.execute("""SELECT vuelos.Fecha, vuelos.Origen, vuelos.Destinos, aviones.idAviones, vuelos.idVuelos from vuelos inner join aviones on vuelos.Aviones_idAviones = aviones.idAviones limit 10""")
+        vuelos = cursor.fetchall()
+    conexion.close()
+    return vuelos
 
     # - en el html va algo así
     #                    <td>

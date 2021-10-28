@@ -12,12 +12,9 @@
     <form 
         class="form"
         id="form"
-        method="GET" 
-        action=""
+        action="{{url_for('nuevo_registro')}}" method="POST"
         name="formRegistro"
         >
-
-            <div class="form__container">
                 <div class="form__group">
                     <img src="/static/img/airplane_register.jpg"
                     alt="" width="72" height="57">
@@ -25,37 +22,37 @@
                 <h2 class="form__title">Registro</h2>
 
                 <div class="form__group">
-                    <input type="text" class="form__input" id="name"  placeholder=" " >
+                    <input type="text" class="form__input" id="name" name="nombre" placeholder=" " >
                     <label for="name" class="form__label">Nombre:</label>
                     <span class="form__line"></span>
                 </div>
 
                 <div class="form__group">
-                    <input type="text" class="form__input" id="lastname" placeholder=" " >
+                    <input type="text" class="form__input" id="lastname" name="apellido" placeholder=" " >
                     <label for="lastname" class="form__label">Apellido:</label>
                     <span class="form__line"></span>
                 </div>
 
                 <div class="form__group">
-                    <input type="number" class="form__input" id="identificacion" placeholder=" " >
+                    <input type="number" class="form__input" id="identificacion" name="documento_usuario" placeholder=" " >
                     <label for="identificacion" class="form__label">ID Documento:</label>
                     <span class="form__line"></span>
                 </div>
 
                 <div class="form__group">
-                    <input type="number" class="form__input" id="age" placeholder=" " onkeypress="return false;" min="18" >
+                    <input type="number" class="form__input" id="age" name="edad" placeholder=" " onkeypress="return false;" min="18" >
                     <label for="age" class="form__label">Edad:</label>
                     <span class="form__line"></span>
                 </div>
 
                 <div class="form__group">
-                    <input type="email" class="form__input" id="email" placeholder=" " >
+                    <input type="email" class="form__input" id="email" name="email" placeholder=" " >
                     <label for="email" class="form__label">Email:</label>
                     <span class="form__line"></span>
                 </div>
 
                 <div class="form__group">
-                    <input type="password" class="form__input" id="password" placeholder=" " >
+                    <input type="password" class="form__input" id="password" name="contraseña" placeholder=" " >
                     <label for="password" class="form__label">Contraseña:</label>
                     <span class="form__line"></span>
                 </div>
@@ -70,7 +67,7 @@
                 <p class="warnings" id="warnings"><strong></strong></p>
                 <p>¿Ya tienes una cuenta? <a href="/">Ingresa</a></p>
                 <p >&copy; Jangle Airport</p>
-            </div>
+       
         </form>
 
     <script src="/public/Landing-page/registro.js"></script>
