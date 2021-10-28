@@ -129,6 +129,17 @@ def obtener_vuelos_piloto():
     conexion.close()
     return vuelos
 
+def obtener_cuentas():
+    conexion = db.obtener_conexion()
+    cuentas = []
+    with conexion.cursor() as cursor:
+        cursor.execute("""select cliente.documentoCliente, cliente.Nombre, cliente.Apellido, cliente.Edad,
+        cliente.Email from cliente""")
+        cuentas = cursor.fetchall()
+    conexion.close()
+    return cuentas
+
+
     # - en el html va algo así
     #                    <td>
     #                         <form action="{{url_for('eliminar_juego')}}" method="POST">

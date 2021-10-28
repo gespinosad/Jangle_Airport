@@ -13,16 +13,21 @@
 {% block Centro %}
     <div class="principal">
         <section class="tabla">
+            <form 
+            class="form"
+            id="form"
+            action="{{url_for('admin_agg_cuentas')}}" method="POST"
+            name="formRegistro"
+            >
             <h1>AGREGAR CUENTAS</h1>
                 <div>
                     <section class="opc-agregar-cuentas">
-                        <input type="text" class="adm-idUsuario" placeholder="ID Usuario">
-                        <input type="text" class="adm-nombre" placeholder="Nombre">
-                        <input type="text" class="adm-apellido" placeholder="Apellido">
-                        <input type="text" class="adm-idDocumento" placeholder="ID Documento">
-                        <input type="text" class="adm-edad" placeholder="Edad">
-                        <input type="text" class="adm-email" placeholder="Email">
-                        <input type="password" class="adm-contraseña" placeholder="Contraseña">
+                        <input type="text" name="nombre" class="adm-nombre" placeholder="Nombre" required=true>
+                        <input type="text" name="apellido" class="adm-apellido" placeholder="Apellido" required=true>
+                        <input type="text" name="documento_usuario" class="adm-idDocumento" placeholder="ID Documento" required=true>
+                        <input type="text" name="edad" class="adm-edad" placeholder="Edad"  required=true>
+                        <input type="text" name="email" class="adm-email" placeholder="Email"  required=true>
+                        <input type="password" name="contraseña" class="adm-contraseña" placeholder="Contraseña" required=true>
                     </section>
                     <section class="secAgregar">
                         <input type="submit" class="adm-agregar">
@@ -33,7 +38,6 @@
                 <table>
                     <thead>
                         <tr">
-                            <th>ID Usuario</th>
                             <th>Nombre</th>
                             <th>Apellido</th>
                             <th>ID Documento</th>
@@ -43,105 +47,19 @@
                     </thead>
                     <tbody>
                         
-                    <tr>
-                        <td>ID Usuario</td>
-                        <td>Nombre</td>
-                        <td>Apellido</td>
-                        <td>ID Documento</td>
-                        <td>Edad</td>
-                        <td>Email</td>
-                    </tr>
-                    <tr>
-                        <td>ID Usuario</td>
-                        <td>Nombre</td>
-                        <td>Apellido</td>
-                        <td>ID Documento</td>
-                        <td>Edad</td>
-                        <td>Email</td>
-                    </tr>
-                    <tr>
-                        <td>ID Usuario</td>
-                        <td>Nombre</td>
-                        <td>Apellido</td>
-                        <td>ID Documento</td>
-                        <td>Edad</td>
-                        <td>Email</td>
-                    </tr>
-                    <tr>
-                        <td>ID Usuario</td>
-                        <td>Nombre</td>
-                        <td>Apellido</td>
-                        <td>ID Documento</td>
-                        <td>Edad</td>
-                        <td>Email</td>
-                    </tr>
-                    <tr>
-                        <td>ID Usuario</td>
-                        <td>Nombre</td>
-                        <td>Apellido</td>
-                        <td>ID Documento</td>
-                        <td>Edad</td>
-                        <td>Email</td>
-                    </tr>
-                    <tr>
-                        <td>ID Usuario</td>
-                        <td>Nombre</td>
-                        <td>Apellido</td>
-                        <td>ID Documento</td>
-                        <td>Edad</td>
-                        <td>Email</td>
-                    </tr>
-                    <tr>
-                        <td>ID Usuario</td>
-                        <td>Nombre</td>
-                        <td>Apellido</td>
-                        <td>ID Documento</td>
-                        <td>Edad</td>
-                        <td>Email</td>
-                    </tr>
-                    <tr>
-                        <td>ID Usuario</td>
-                        <td>Nombre</td>
-                        <td>Apellido</td>
-                        <td>ID Documento</td>
-                        <td>Edad</td>
-                        <td>Email</td>
-                    </tr>
-                    <tr>
-                        <td>ID Usuario</td>
-                        <td>Nombre</td>
-                        <td>Apellido</td>
-                        <td>ID Documento</td>
-                        <td>Edad</td>
-                        <td>Email</td>
-                    </tr>
-                    <tr>
-                        <td>ID Usuario</td>
-                        <td>Nombre</td>
-                        <td>Apellido</td>
-                        <td>ID Documento</td>
-                        <td>Edad</td>
-                        <td>Email</td>
-                    </tr>
-                    <tr>
-                        <td>ID Usuario</td>
-                        <td>Nombre</td>
-                        <td>Apellido</td>
-                        <td>ID Documento</td>
-                        <td>Edad</td>
-                        <td>Email</td>
-                    </tr>
-                    <tr>
-                        <td>ID Usuario</td>
-                        <td>Nombre</td>
-                        <td>Apellido</td>
-                        <td>ID Documento</td>
-                        <td>Edad</td>
-                        <td>Email</td>
-                    </tr>
+                        {% for misCuentas in misCuentas %}
+                        <tr>
+                            <td>{{misCuentas[1]}}</td>
+                            <td>{{misCuentas[2]}}</td>
+                            <td>{{misCuentas[0]}}</td>
+                            <td>{{misCuentas[3]}}</td>
+                            <td>{{misCuentas[4]}}</td>
+                        </tr>
+                    {% endfor %}
                     </tbody>
                 </table>
             </div>
+            </form>
         </section>
     </div>
 {% endblock %}

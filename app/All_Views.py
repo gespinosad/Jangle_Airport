@@ -22,11 +22,11 @@ def login():
     if request.method == "POST":
         user = request.form["CC"]
         getUser = dbController.searchAccount(user)
-        contraseña = request.form["contraseña"]
+        clave = request.form["contraseña"]
         # comparar la contraseña asi:
         #! if pbkdf2_sha256.verify(contraseña, getUser[1])
         if getUser != None:
-            if user == str(getUser[0]) and contraseña == str(getUser[1]):
+            if user == str(getUser[0]) and clave == str(getUser[1]):
                 session["usuario"] = user
                 session["account"] = getUser[2]  # me dara el idRoles
                 # Aquí puedes colocar más datos. Por ejemplo
@@ -52,9 +52,9 @@ def nuevo_registro():
         documento_usuario = request.form.get("documento_usuario")
         edad = request.form.get("edad")
         email = request.form.get("email")
-        contraseña = request.form.get("contraseña")
+        clave = request.form.get("contraseña")
         roles = 2
-        dbController.agregar_usuario(documento_usuario, nombre, contraseña, roles, apellido, edad, email)
+        dbController.agregar_usuario(documento_usuario, nombre, clave, roles, apellido, edad, email)
         return redirect("/login")
 
 # Cerrar sesión
